@@ -1,0 +1,17 @@
+= Release Notes
+
+== 0.1.1 // 2008-08-30
+
+This is the initial release of RTALS. But, it is
+released only for the sake of (hopefully) perking
+the interestss of others. The current implementation
+is merely a demonstration; and would require 
+significant improvements to make it of value in 
+production. That being said, I believe this working
+prototype demonsrates quite well why this kind of
+template system would make an excellent choice, should
+someone tak the time to make a solid library of it.
+
+As you may have guessed this project is up for adoption.
+
+

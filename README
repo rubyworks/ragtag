@@ -1,0 +1,35 @@
+= RTALS
+
+http://rtals.rubyforge.org
+
+
+== OVERVIEW
+
+RTALS stands for Ruby Tag Attribute Lanaguage System. Yea, it's an
+acronym. BUt don't blame me, blame those Zope people.
+
+
+== INSTALL
+
+  $ gem install rtals
+
+
+== USAGE
+
+For the moment please see the RDoc API.
+
+
+== DEVELOPMENT
+
+We use Rubyforge to host the project.
+
+We use Reap to manage the build.
+
+
+== LICENSE
+
+Copyright (c) 2005,2008 Tiger Ops
+
+RTALS is distributed under the terms of the LGPL license.
+Please see the included 'Copyright' file.
+
