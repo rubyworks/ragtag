@@ -1,0 +1,93 @@
+<?xml version="1.0" ?>
+<?xml:ns name="" space="http://www.w3.org/1999/xhtml" ?>
+<?xml:ns name="xt" space="http://www.transami.net/namespace/xmltails" ?>
+<?xml:script url="example-data.rb" uri="ruby" ?>
+
+<html>
+
+<head>
+
+  <title>Test</title>
+
+</head>
+
+<body>
+
+  <span xt:import="example_import.xtr" xt:xpath="//h1" />
+
+  <span xt:import="example_import.xtr#sub title" />
+
+  <span xt:import="example_import.xtr#parent title" xt:xpath=".//i" />
+
+  <span xt:eval="test = Tester.new">
+    <h1 xt:content="test.punk">Punk</h1>
+  </span>
+  
+  <h1 xt:content="title">Greeting</h1>
+
+  <span xt:if="condit">Kill Me!</span>
+
+  <font color="red" xt:attributes_if="color=condit">Punk</font>
+
+  <font color="red" size="8" xt:content="'literal'" xt:attributes="color=color; size=16">Punk</font>
+
+  <span xt:each="spin" xt:do="value">
+    This one is <b xt:content="value_index">Dummy Spin</b> - <b xt:content="value">Dummy Spin</b>
+  </span>
+  
+  <span xt:each="spin_again">
+    This one is <b xt:content="item[1]">Dummy Spin</b>
+  </span>
+
+  <span xt:each="thash" xt:do="key, value">
+    This one is <b xt:content="key_index">Dummy THash Key</b>. <b xt:content="key">Dummy THash Key</b> = <b xt:content="value">Dummy THash Key</b>
+  </span>
+
+  <span xt:each="spin" xt:do="number">
+    <span xt:each="sub_spin" xt:do="letter">
+      Loop in a loop <b xt:content="title">Dummy Spin</b>:
+      <b xt:content="number">Dummy Spin</b> x <b xt:content="letter">Dummy Sub Spin</b>
+    </span>
+  </span>
+
+<span xt:import="example_import.xtr" xt:xpath="//h1" />
+
+  <span xt:import="example_import.xtr#sub title" />
+
+  <span xt:import="example_import.xtr#parent title" xt:xpath=".//i" />
+
+  <span xt:eval="test = Tester.new">
+    <h1 xt:content="test.punk">Punk</h1>
+  </span>
+  
+  <h1 xt:content="title">Greeting</h1>
+
+  <span xt:if="condit">Kill Me!</span>
+
+  <font color="red" xt:attributes_if="color=condit">Punk</font>
+
+  <font color="red" size="8" xt:content="'literal'" xt:attributes="color=color; size=16">Punk</font>
+
+  <span xt:each="spin" xt:do="value">
+    This one is <b xt:content="value_index">Dummy Spin</b> - <b xt:content="value">Dummy Spin</b>
+  </span>
+  
+  <span xt:each="spin_again">
+    This one is <b xt:content="item[1]">Dummy Spin</b>
+  </span>
+
+  <span xt:each="thash" xt:do="key, value">
+    This one is <b xt:content="key_index">Dummy THash Key</b>. <b xt:content="key">Dummy THash Key</b> = <b xt:content="value">Dummy THash Key</b>
+  </span>
+
+  <span xt:each="spin" xt:do="number">
+    <span xt:each="sub_spin" xt:do="letter">
+      Loop in a loop <b xt:content="title">Dummy Spin</b>:
+      <b xt:content="number">Dummy Spin</b> x <b xt:content="letter">Dummy Sub Spin</b>
+    </span>
+  </span>
+
+</body>
+
+</html>
+

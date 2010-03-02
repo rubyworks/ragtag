@@ -1,0 +1,52 @@
+= xml:Tailor - XML Tag Attribute Language for Ruby
+
+Copyright (c) 2002 Thomas Sawyer, LGPL
+
+== Introduction
+
+xml:Tailor is a TAL, a Tag Attribute Language, for Ruby. What is a TAL?
+TALs are like template systems for SGML derivitives (XML/XHTML),
+but more powerful, and rather compare to ERuby.
+The advantage of a TALs, though, 
+is that you can use standard visual HTML editors without difficulty.
+This is due to all dynamic markup is specified in attributes
+rather than as special tags.
+
+== Installation
+
+To install xml:Tailor simply unpack the gzipped tarball into your local site_ruby path.
+This path is usually +/usr/local/lib/site_ruby/1.6/+.
+An install script is not currently provided.
+
+== Requirements
+
+REXML 2.3.5+|
+TomsLib::REREXML
+
+== Usage
+
+Currently you'll just have to weed through the example and code.
+
+== Authentication
+
+Package:: xml:Tailor
+Author:: Thomas Sawyer
+Requires:: Ruby 1.6.7+
+License:: Copyright (c) 2002 Thomas Sawyer, LGPL
+
+== Copy Notice
+
+xml:Tailor is free software; you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+xml:Tailor is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with xml:Tailor; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+

@@ -1,25 +1,5 @@
-# = rtals.rb
-#
-# == Copyright (c) 2006 Thomas Sawyer
-#
-#   Ruby License
-#
-#   This module is free software. You may use, modify, and/or redistribute this
-#   software under the same terms as Ruby.
-#
-#   This program is distributed in the hope that it will be useful, but WITHOUT
-#   ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
-#   FOR A PARTICULAR PURPOSE.
-#
-# == Author(s)
-#
-# * Thomas Sawyer
-
-# Author::    Thomas Sawyer
-# Copyright:: Copyright (c) 2006 Thomas Sawyer
-# License::   Ruby License
-
-require 'rexml/document'
+require 'nokogiri'
+require 'facets/binding/opvars'
 
 # = Tag Attribute Language for Ruby
 #
@@ -31,12 +11,12 @@ require 'rexml/document'
 #   s = %q{
 #     <html>
 #     <body>
-#       <h1 rtal:content="x">[X]</h1>
-#       <div rtal:each="animal" rtal:do="a">
-#         <b rtal:content="a">[ANIMAL]</b>
+#       <h1 r:content="x">[X]</h1>
+#       <div r:each="animal" r:do="a">
+#         <b r:content="a">[ANIMAL]</b>
 #       </div>
-#       <div rtal:if="animal.size > 1">
-#         There are <b rtal:body="animal.size">[ANIMAL SIZE]</b> animals.
+#       <div r:if="animal.size > 1">
+#         There are <b r:content="animal.size">[ANIMAL SIZE]</b> animals.
 #       </div>
 #     </body>
 #     </html>
@@ -44,10 +24,8 @@ require 'rexml/document'
 #
 #   x = 'Our Little Zoo'
 #   animal = ['Zebra', 'Monkey', 'Tiger' ]
-#   out = ''
 #
-#   prg = RubyTals.compile( s )
-#   puts eval(prg)
+#   puts RubyTals.compile(s, binding)
 #
 # == Note
 #
@@ -67,7 +45,7 @@ require 'rexml/document'
 # it would require the if-clause in the above exmaple to be
 # something like:
 #
-#       <div rtal:if="animal/plenty">
+#       <div r:if="animal/plenty">
 #
 # and have a definition in the evaluateing code:
 #
@@ -78,135 +56,134 @@ require 'rexml/document'
 # It's a classic Saftey vs. Usability trade-off. Something to
 # consider for the future.
 
-module RubyTals
+class RubyTals
 
-  def self.compile( xmlstr )
-    rxml = REXML::Document.new( xmlstr.strip )
-    "out=''\n" + parse( rxml ) + "\nout"
+  attr :xml
+
+  attr :scope
+
+  #
+  def self.compile(xml, scope=nil)
+    new(xml).compile(scope)
   end
 
-  def self.execute( script, data )
-    vars.each_pair { |k,v|
-    }
-    eval script
+  #def self.execute( script, data )
+  #  vars.each_pair { |k,v|
+  #  }
+  #  eval script
+  #end
+
+  #
+  def initialize(xml)
+    case xml
+    when String
+      @xml = Nokogiri::XML(xml)
+    else
+      @xml = xml
+    end
   end
 
-  def self.parse( xml )
-    building = ''
-    body = []
+  #
+  def compile(scope=nil)
+    @scope = scope || Object.new
+    parse(@xml.root)
+    xml
+  end
 
-    xml.each do |elem|
-      #p elem.class
+  #def parse_all(node)
+  #  while node
+  #    parse(node)
+  #    node = node.next
+  #  end
+  #end
 
-      tag, mode = [], nil
-      case elem
-      when REXML::Element
+  $rtals_each_stack = []
 
-        attributes, ruby_attributes = {}, {}
-        elem.attributes.each { |k, v|
-          if k =~ /^rtal:/i
-            ruby_attributes[k.sub(/^rtal:/i,'')] = v
-          else
-            attributes[k] = v
-          end
-        }
-
-        if ruby_attributes.empty?
-          tag = add_tag( elem.name, parse( elem ), attributes )
-
-        else
-          if bd = ruby_attributes["content"]
-            tag << "out << #{bd}.to_s"
-          elsif bd = ruby_attributes["replace"]
-            tag << "out << #{bd}.to_s"
-            mode = :replace
-          else
-            tag << parse( elem )
-          end
-
-          if cond = ( ruby_attributes["if"] || ruby_attributes["condition"] )
-            #mode = :replace
-            tag = ([ "if #{cond}" ].concat( tag ) << "end")
-          end
-
-          if enum = ( ruby_attributes["each"] || ruby_attributes["repeat"] )
-            loopf = "#{enum}.each do"
-            if d = ruby_attributes["do"]
-              loopf << " |#{d}|"
-            end
-            tag = ([ loopf ].concat( tag ) << "end")
-          end
-
-          unless mode == :replace  #unless attributes.empty? #
-            tag = add_tag( elem.name, tag, attributes )
-          end
-
-        end
-
-      else
-        tag << "out << #{elem.to_s.inspect}"
-
+  #
+  def parse(node)
+    case node
+    when Nokogiri::XML::Text
+      # nothing
+    when Nokogiri::XML::NodeSet
+      parse_nodeset(node)
+    when Nokogiri::XML::Element
+      if value = node['content']
+        node.content = eval(value, @scope)
       end
 
-      body.concat tag
-    end
+      if value = node['if']
+        if eval(value, @scope)
+          parse(node.children).each do |x|
+            x.unlink
+            node.parent.add_child(x)
+          end
+        end
+        node.unlink
+      end
 
-    building << body.flatten.join("\n")
-    return building
-  end
+      if value = node['each']
+        copy = node.dup
+        args = node['do'].split(',')
+        eval(value, @scope).each do |*a|
+          $rtals_each_stack << a
+          eval("#{args} = *$rtals_each_stack.last", @scope)
+          $rtals_each_stack.pop
+          sect = parse(copy.dup.children)
+          sect.each do |x|
+            node.parent.add_child(x)
+          end
+        end
+        node.unlink
+        value
+      end
 
-  def self.add_tag( name, body, attributes={} )
-    b = []
-    if attributes.empty?
-      b << "out << '<#{name}>'"
-      b << body
-      b << "out << '</#{name}>'"
+      node.children.each do |child|
+        parse(child)
+      end
     else
-      s = ''
-      s << "out << '<#{name} "
-      s << attributes.collect { |k,v| %{#{k}="#{v}"} }.join(' ')
-      s << ">'"
-      b << s
-      b << body
-      b << "out << '</#{name}>'"
+      p node
+      raise
     end
-    b
+    return node
   end
 
-  def self.loop_structure
-
+  #
+  def parse_nodeset(nodeset)
+    nodeset.each do |node|
+      parse(node)
+    end
+    nodeset
   end
 
 end
 
 
+if $0 == __FILE__
 
+  xml = %q{
+    <html>
+    <body>
+      <test>This is a test.</test>
+      <h1 rtal:content="x">[X]</h1>
+      <div rtal:each="animal" rtal:do="a">
+        <b rtal:content="a">[ANIMAL]</b>
+      </div>
+      <div rtal:if="animal.size >= 1">
+        <b rtal:content="animal.size">[ANIMAL SIZE]</b>
+      </div>
+    </body>
+    </html>
+  }
 
-=begin
+  x = '10'  # problem with numbers
+  a = "Apple"
+  animal = ['Zebra', 'Monkey', 'Tiger' ]
 
-s = %q{
-  <html>
-  <body>
-    <test>This is a test.</test>
-    <h1 rtal:content="x">[X]</h1>
-    <div rtal:each="animal" rtal:do="a">
-      <b rtal:content="a">[ANIMAL]</b>
-    </div>
-    <div rtal:if="animal.size >= 1">
-      <b rtal:body="animal.size">[ANIMAL SIZE]</b>
-    </div>
-  </body>
-  </html>
-}
+  rxml = RubyTals.compile(xml, binding)
 
-x = '10'  # problem with numbers
-animal = ['Zebra', 'Monkey', 'Tiger' ]
-out = ''
+  puts
+  puts rxml
+  puts
 
-prg = RubyTals.compile( s )
-puts
-puts prg
-puts
-puts eval(prg)
+end
 
-=end

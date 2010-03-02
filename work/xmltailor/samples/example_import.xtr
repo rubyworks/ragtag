@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<?xml:ns name="xt" space="http://www.transami.net/namespace/xmltails" ?>
+
+<?ruby
+
+  import_title = "Hello Tommmy"
+  import_subtitle = "Hello Sub Tommmy"
+
+?>
+
+
+<fragments>
+
+  <h1 xt:content="import_title">DUMDUM</h1>
+
+  <h2 xt:importable="sub title" xt:content="import_subtitle">DUMDUM</h2>
+
+  <span xt:importable="parent title">
+    <i>Parent document title is <b xt:content="title">DUMDUM</b></i>
+  </span>
+
+</fragments>
+
