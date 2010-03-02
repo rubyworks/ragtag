@@ -1,17 +1,18 @@
 = RTALS
 
-http://rtals.rubyforge.org
+* home: http://rubyworks.github.com/rtals
+* work: http://github.com/rubyworks/rtals
 
 
 == OVERVIEW
 
 RTALS stands for Ruby Tag Attribute Lanaguage System. Yea, it's an
-acronym. BUt don't blame me, blame those Zope people.
+acronym. Don't blame me, blame those Zope people ;)
 
-
-== INSTALL
-
-  $ gem install rtals
+RTALS is not fully compatiable with the Zope TAL sepcification.
+It's first priority is to provide a good attribute based
+template system for Ruby. But beyond that it does try to support
+as much of the Zope spec as it can.
 
 
 == USAGE
@@ -19,11 +20,18 @@ acronym. BUt don't blame me, blame those Zope people.
 For the moment please see the RDoc API.
 
 
+== HOW TO INSTALL
+
+Yea you know the procedure:
+
+  $ gem install rtals
+
+
 == DEVELOPMENT
 
-We use Rubyforge to host the project.
+We use GitHub ge to host the project.
 
-We use Reap to manage the build.
+We use Syckle to manage the build.
 
 
 == LICENSE
