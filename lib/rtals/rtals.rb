@@ -56,7 +56,7 @@ require 'facets/binding/opvars'
 # It's a classic Saftey vs. Usability trade-off. Something to
 # consider for the future.
 
-class RubyTals
+class RubyTALS
 
   attr :xml
 
@@ -85,8 +85,8 @@ class RubyTals
 
   #
   def compile(scope=nil)
-    @scope = scope || Object.new
-    parse(@xml.root)
+    scope = scope || $TOPLEVEL_BINDING
+    parse(@xml.root, scope)
     xml
   end
 
@@ -97,62 +97,151 @@ class RubyTals
   #  end
   #end
 
-  $rtals_each_stack = []
+  #$rtals_each_stack = []
 
   #
-  def parse(node)
+  def parse(node, scope)
     case node
     when Nokogiri::XML::Text
       # nothing
     when Nokogiri::XML::NodeSet
-      parse_nodeset(node)
+      parse_nodeset(node, scope)
     when Nokogiri::XML::Element
-      if value = node['content']
-        node.content = eval(value, @scope)
+
+      if value = node['define']
+        eval(value, scope)
       end
 
-      if value = node['if']
-        if eval(value, @scope)
-          parse(node.children).each do |x|
-            x.unlink
-            node.parent.add_child(x)
-          end
-        end
-        node.unlink
+      if node['if']
+        parse_if(node, scope)
+      elsif node['condition']
+        parse_condition(node, scope)
       end
 
-      if value = node['each']
-        copy = node.dup
-        args = node['do'].split(',')
-        eval(value, @scope).each do |*a|
-          $rtals_each_stack << a
-          eval("#{args} = *$rtals_each_stack.last", @scope)
-          $rtals_each_stack.pop
-          sect = parse(copy.dup.children)
-          sect.each do |x|
-            node.parent.add_child(x)
-          end
-        end
-        node.unlink
-        value
+      if node['content']
+        parse_content(node, scope)
+      elsif node['replace']
+        parse_replace(node, scope)
+      end
+
+      if node['attr'] || node['attributes']
+        parse_attributes(node, scope)
+      end
+
+      if node['each']
+        parse_each(node, scope)
+        return
+      elsif node['repeat']
+        parse_repeat(node, scope)
+        return
       end
 
       node.children.each do |child|
-        parse(child)
+        parse(child, scope)
       end
     else
-      p node
-      raise
+      raise node.inspect
     end
     return node
   end
 
   #
-  def parse_nodeset(nodeset)
+  def parse_nodeset(nodeset, scope)
     nodeset.each do |node|
-      parse(node)
+      parse(node, scope)
     end
     nodeset
+  end
+
+  #
+  def parse_content(node, scope)
+    value = node['content']
+    node.content = eval(value, scope)
+    node.remove_attribute('content')
+  end
+
+  #
+  def parse_replace(node, scope)
+    value = node['replace']
+    node.before(eval(value, scope))
+    node.unlink
+  end
+
+  #
+  def parse_attributes(node, scope)
+    if attrs = node['attr']
+      assoc = attrs.split(',').map{ |e| e.strip.split(':') }
+      assoc.each do |(k,v)|
+        node[k] = eval(v, scope)
+      end
+      node.remove_attribute('attr')
+    end
+    if attrs = node['attributes']
+      assoc = attrs.split(',').map{ |e| e.strip.split(':') }
+      assoc.each do |(k,v)|
+        node[k] = eval(v, scope)
+      end
+      node.remove_attribute('attributes')
+    end
+    node
+  end
+
+  #
+  def parse_if(node, scope)
+    value = node['if']
+    if eval(value, scope)
+      parse(node.children, scope).each do |x|
+        x.unlink
+        node.add_previous_sibling(x) 
+      end
+      node.unlink
+    else
+      node.unlink
+    end
+  end
+
+  #
+  def parse_condition(node, scope)
+    value = node['condition']
+    if eval(value, scope)
+      node.remove_attribute('condition')
+      parse(node.children, scope)
+    else
+      node.unlink
+    end
+    node
+  end
+
+  #
+  def parse_each(node, scope)
+    value = node['each']
+    args  = node['do']
+    copy  = node.dup
+    bindings = eval("#{value}.map{ |#{args}| binding }", scope)
+    bindings.each do |each_scope|
+      sect = parse(copy.dup.children, each_scope)
+      sect.each do |x|
+        node.add_previous_sibling(x)
+      end
+    end
+    node.unlink
+    value
+  end
+
+  #
+  def parse_repeat(node, scope)
+    value = node['repeat']
+    args  = node['do'] || 'x'
+    copy  = node.dup
+    copy.remove_attribute('repeat')
+    copy.remove_attribute('do')
+    bindings = eval("#{value}.map{ |#{args}| binding }", scope)
+    bindings.each do |each_scope|
+      sect = parse(copy.dup, each_scope)
+      node.add_previous_sibling(sect)
+    end
+    node.unlink
+    value
   end
 
 end
@@ -165,9 +254,11 @@ if $0 == __FILE__
     <body>
       <test>This is a test.</test>
       <h1 rtal:content="x">[X]</h1>
+      <span rtal:replace="x" />
       <div rtal:each="animal" rtal:do="a">
         <b rtal:content="a">[ANIMAL]</b>
       </div>
+      <span rtal:attr="class: q">Yea</span>
       <div rtal:if="animal.size >= 1">
         <b rtal:content="animal.size">[ANIMAL SIZE]</b>
       </div>
@@ -176,13 +267,14 @@ if $0 == __FILE__
   }
 
   x = '10'  # problem with numbers
-  a = "Apple"
+  q = 'beast'
+  #a = "Apple"
   animal = ['Zebra', 'Monkey', 'Tiger' ]
 
-  rxml = RubyTals.compile(xml, binding)
+  rxml = RubyTALS.compile(xml, binding)
 
   puts
-  puts rxml
+  puts rxml #.to_xhtml(:indent => 5, :encoding => 'UTF-8')
   puts
 
 end
