@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+  <title>RTALS</title>
+
+  <link rel="SHORTCUT ICON" href="assets/icon/ruby.png">
+
+  <link type="text/css" rel="stylesheet" href="assets/rdoc.css" media="screen" />
+  <link type="text/css" rel="stylesheet" href="assets/highlight/styles/github.css" title="GitHub" />
+
+  <script type="text/javascript" charset="utf-8" src="assets/jquery.js"></script>
+  <script type="text/javascript" charset="utf-8" src="assets/highlight/highlight.pack.js"></script>
+  <script type="text/javascript" charset="utf-8" src="assets/quicksearch.js"></script>
+  <script type="text/javascript" charset="utf-8" src="assets/main.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready( function() {
+      $('#documentation pre').wrapInner('<code></code>');
+      hljs.tabReplace = '    ';
+      hljs.initHighlightingOnLoad('ruby');
+
+	    hookSourceViews();
+	    hookDebuggingToggle();
+	    hookQuickSearch();
+	    highlightLocationTarget();
+
+	    $('ul.link-list a').bind( "click", highlightClickTarget );
+    });
+  </script>
+</head>
+<body class="indexpage">
+<div id="main">
+
+  
+  <div class="head">
+    <h1>
+      <img src="assets/icon/project.png" align="absmiddle">&nbsp;
+      <a href="index.html">RTALS</a>
+    </h1>
+  </div>
+
+  <div id="metadata">
+    <div id="project-metadata">
+
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Information</h3>
+        <ul>
+        
+          <li class="file"><a href="files/HISTORY.html">HISTORY</a></li>
+        
+          <li class="file"><a href="files/LICENSE.html">LICENSE</a></li>
+        
+          <li class="file"><a href="files/README.html">README</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class Index
+          <span class="search-toggle"><img src="assets/icon/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li class="class"><a href="classes/Binding.html">Binding</a></li>
+        
+          <li class="class"><a href="classes/RTAL.html">RTAL</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      <!-- METHODS -->
+      <div id="methodindex-section" class="section project-section">
+        <h3 class="section-header">Method Index</h3>
+        <ul>
+          
+            
+            <li class="singleton" style="clear: both;">
+              <span class="method-parent-aside">RTAL</span>
+              <a href="classes/RTAL.html#M000002">::compile</a>
+            </li>
+          
+            
+            <li class="singleton" style="clear: both;">
+              <span class="method-parent-aside">RTAL</span>
+              <a href="classes/RTAL.html#M000003">::new</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Binding</span>
+              <a href="classes/Binding.html#M000000">#[]</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">Binding</span>
+              <a href="classes/Binding.html#M000001">#[]=</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">RTAL</span>
+              <a href="classes/RTAL.html#M000004">#compile</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">RTAL</span>
+              <a href="classes/RTAL.html#M000005">#parse</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">RTAL</span>
+              <a href="classes/RTAL.html#M000009">#parse_attributes</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">RTAL</span>
+              <a href="classes/RTAL.html#M000007">#parse_content</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">RTAL</span>
+              <a href="classes/RTAL.html#M000011">#parse_each</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">RTAL</span>
+              <a href="classes/RTAL.html#M000010">#parse_if</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">RTAL</span>
+              <a href="classes/RTAL.html#M000006">#parse_nodeset</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">RTAL</span>
+              <a href="classes/RTAL.html#M000013">#parse_omit</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">RTAL</span>
+              <a href="classes/RTAL.html#M000012">#parse_repeat</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">RTAL</span>
+              <a href="classes/RTAL.html#M000008">#parse_replace</a>
+            </li>
+          
+        </ul>
+      </div>
+
+    </div>
+
+    <div id="validator-badges">
+      
+      <div style="float: right; margin-right: 5px;">
+        <a href="http://validator.w3.org/check/referer"><img src="assets/icon/check.png" alt="[Validate]" height="16" width="16" /></a>
+      </div>
+      Generated with <a href="http://github.com/proutils/webri">WebRI NewFish</a> 1.2
+      <br/><br/> 
+    </div>
+  </div>
+
+<!--
+  
+  
+  <h2>Files</h2>
+  <ul>
+    
+      <li class="file"><a href="files/HISTORY.html">HISTORY</a></li>
+    
+      <li class="file"><a href="files/LICENSE.html">LICENSE</a></li>
+    
+      <li class="file"><a href="files/README.html">README</a></li>
+    
+  </ul>
+  
+
+  <h2>Classes/Modules</h2>
+  <ul>
+    
+    <li class="class"><a href="classes/Binding.html">Binding</a></li>
+    
+    <li class="class"><a href="classes/RTAL.html">RTAL</a></li>
+    
+  </ul>
+
+  <h2>Methods</h2>
+  <ul>
+    
+      <li><a href="classes/RTAL.html#M000002">::compile &mdash; RTAL</a></li>
+    
+      <li><a href="classes/RTAL.html#M000003">::new &mdash; RTAL</a></li>
+    
+      <li><a href="classes/Binding.html#M000000">#[] &mdash; Binding</a></li>
+    
+      <li><a href="classes/Binding.html#M000001">#[]= &mdash; Binding</a></li>
+    
+      <li><a href="classes/RTAL.html#M000004">#compile &mdash; RTAL</a></li>
+    
+      <li><a href="classes/RTAL.html#M000005">#parse &mdash; RTAL</a></li>
+    
+      <li><a href="classes/RTAL.html#M000009">#parse_attributes &mdash; RTAL</a></li>
+    
+      <li><a href="classes/RTAL.html#M000007">#parse_content &mdash; RTAL</a></li>
+    
+      <li><a href="classes/RTAL.html#M000011">#parse_each &mdash; RTAL</a></li>
+    
+      <li><a href="classes/RTAL.html#M000010">#parse_if &mdash; RTAL</a></li>
+    
+      <li><a href="classes/RTAL.html#M000006">#parse_nodeset &mdash; RTAL</a></li>
+    
+      <li><a href="classes/RTAL.html#M000013">#parse_omit &mdash; RTAL</a></li>
+    
+      <li><a href="classes/RTAL.html#M000012">#parse_repeat &mdash; RTAL</a></li>
+    
+      <li><a href="classes/RTAL.html#M000008">#parse_replace &mdash; RTAL</a></li>
+    
+  </ul>
+-->
+
+  
+  <div id="documentation">
+    <h1>RTALS</h1>
+<ul>
+<li>home: <a
+href="http://rubyworks.github.com/rtals">rubyworks.github.com/rtals</a>
+
+</li>
+<li>work: <a
+href="http://github.com/rubyworks/rtals">github.com/rubyworks/rtals</a>
+
+</li>
+</ul>
+<h2>OVERVIEW</h2>
+<p>
+RTALS stands for Ruby Tag Attribute Lanaguage System. Yea, it&#8217;s an
+acronym. Don&#8217;t blame me, blame those Zope people ;)
+</p>
+<p>
+RTALS is not fully compatiable with the Zope TAL sepcification. It&#8217;s
+first priority is to provide a good attribute based template system for
+Ruby. But beyond that it does try to support as much of the Zope spec as it
+can.
+</p>
+<h2>USAGE</h2>
+<p>
+For the moment please see the <a
+href="http://wiki.github.com/rubyworks/rtals/">WIKI</a>.
+</p>
+<h2>HOW TO INSTALL</h2>
+<p>
+Yea you know the procedure:
+</p>
+<pre>
+  $ gem install rtals
+</pre>
+<h2>DEVELOPMENT</h2>
+<p>
+We use GitHub ge to host the project.
+</p>
+<p>
+We use Syckle to manage the build.
+</p>
+<h2><a href="LICENSE.html">LICENSE</a></h2>
+<p>
+Copyright &#169; 2005,2008 Tiger Ops
+</p>
+<p>
+RTALS is distributed under the terms of the LGPL license. Please see the
+included &#8216;Copyright&#8217; file.
+</p>
+
+  </div>
+  
+
+</div>
+</body>
+</html>
+
