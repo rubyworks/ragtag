@@ -16,11 +16,8 @@ gemcutter:
 
 box:
   service: Box
-  active : true
   types  : [gem, gz]
-  include: [bin, demo, lib, meta, plug, test, "[A-Z]*"]
-  exclude: ~
-  master : false
+  active : true
 
 ridoc:
   service: RIDoc
@@ -29,10 +26,11 @@ ridoc:
   active : true
 
 rdoc:
-  service: RDoc
-  include: ~
-  exclude: [ Syckfile ]
-  active : true
+  service : RDoc
+  template: newfish
+  include : ~
+  exclude : [ Syckfile ]
+  active  : true
 
 syntax:
   service  : Syntax

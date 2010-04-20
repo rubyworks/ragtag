@@ -25,7 +25,6 @@ xml = %q{
     <div class="notice" rtal:if="customer.age > 60" rtal:omit="true">
       The customer is a senior citizen.
     </div>
-
   </div>
 </body>
 </html>
@@ -47,7 +46,5 @@ customer_class = customer.age > 60 ? 'senior' : 'normal'
 
 rxml = RTAL.compile(xml, binding)
 
-puts
-puts rxml #.to_xhtml(:indent => 5, :encoding => 'UTF-8')
-puts
+puts rxml
 
