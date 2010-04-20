@@ -1,0 +1,9 @@
+= RELEASE HISTORY
+
+== 0.5.0 // 2010-04-19
+
+This is the first public release of RTALS. The library is
+finally at a point where I think it is generally usable.
+While it still has much room for improvement, all the
+essentially functionality is in place.
+
