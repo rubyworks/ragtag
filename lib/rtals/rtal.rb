@@ -1,5 +1,5 @@
 require 'nokogiri'
-require 'facets/binding/opvars'
+require 'rtals/core_ext/opvars'
 
 # = Tag Attribute Language for Ruby
 #
@@ -25,20 +25,17 @@ require 'facets/binding/opvars'
 #   x = 'Our Little Zoo'
 #   animal = ['Zebra', 'Monkey', 'Tiger' ]
 #
-#   puts RubyTals.compile(s, binding)
+#   puts RTALS.compile(s, binding)
 #
 # == Note
 #
-# WARNING! This library is only minimally functional at this point.
-# If you would like to use it please consider improving upon it!
-#
-# Presently rTAL clauses can run arbitraty Ruby code. Although
+# Presently RTAL clauses can run arbitraty Ruby code. Although
 # upping the safety level before executing a compiled template
 # should be sufficiently protective in most cases, perhaps it would
 # be better to limit valid expressions to single object references,
 # ie. 'this.that', and then use a substitution of '.' for '/'.
 # Not only would this be highly protective, it would also be more
-# compatible with the original TAL spec; albiet this isn't exacty
+# compatible with the original TAL spec; albeit this isn't exacty
 # how TALs interprets the '/' divider.
 #
 # On the other hand perhaps it is too much restraint. For instance
@@ -47,7 +44,7 @@ require 'facets/binding/opvars'
 #
 #       <div r:if="animal/plenty">
 #
-# and have a definition in the evaluateing code:
+# and have a definition in the evaluating code:
 #
 #   def animal.plenty
 #     size > 1
@@ -56,10 +53,12 @@ require 'facets/binding/opvars'
 # It's a classic Saftey vs. Usability trade-off. Something to
 # consider for the future.
 
-class RubyTALS
+class RTAL
 
+  #
   attr :xml
 
+  #
   attr :scope
 
   #
@@ -114,8 +113,8 @@ class RubyTALS
 
       if node['if']
         parse_if(node, scope)
-      elsif node['condition']
-        parse_condition(node, scope)
+      #elsif node['condition']
+      #  parse_condition(node, scope)
       end
 
       if node['content']
@@ -138,6 +137,10 @@ class RubyTALS
 
       node.children.each do |child|
         parse(child, scope)
+      end
+
+      if node['omit'] && node['omit'] != 'false'
+        parse_omit(node, scope)
       end
     else
       raise node.inspect
@@ -163,7 +166,7 @@ class RubyTALS
   #
   def parse_replace(node, scope)
     value = node['replace']
-    node.before(eval(value, scope))
+    node.before(eval(value, scope).to_s)
     node.unlink
   end
 
@@ -172,14 +175,14 @@ class RubyTALS
     if attrs = node['attr']
       assoc = attrs.split(',').map{ |e| e.strip.split(':') }
       assoc.each do |(k,v)|
-        node[k] = eval(v, scope)
+        node[k] = eval(v, scope).to_s
       end
       node.remove_attribute('attr')
     end
     if attrs = node['attributes']
       assoc = attrs.split(',').map{ |e| e.strip.split(':') }
       assoc.each do |(k,v)|
-        node[k] = eval(v, scope)
+        node[k] = eval(v, scope).to_s
       end
       node.remove_attribute('attributes')
     end
@@ -190,21 +193,7 @@ class RubyTALS
   def parse_if(node, scope)
     value = node['if']
     if eval(value, scope)
-      parse(node.children, scope).each do |x|
-        x.unlink
-        node.add_previous_sibling(x) 
-      end
-      node.unlink
-    else
-      node.unlink
-    end
-  end
-
-  #
-  def parse_condition(node, scope)
-    value = node['condition']
-    if eval(value, scope)
-      node.remove_attribute('condition')
+      node.remove_attribute('if')
       parse(node.children, scope)
     else
       node.unlink
@@ -212,19 +201,35 @@ class RubyTALS
     node
   end
 
+  ## Like #parse_if but does not keep the conditional node.
+  #def parse_condition(node, scope)
+  #  value = node['condition']
+  #  if eval(value, scope)
+  #    parse(node.children, scope).each do |x|
+  #      x.unlink
+  #      node.add_previous_sibling(x) 
+  #    end
+  #    node.unlink
+  #  else
+  #    node.unlink
+  #  end
+  #end
+
   #
   def parse_each(node, scope)
     value = node['each']
-    args  = node['do']
+    args  = node['do'] || 'x'
     copy  = node.dup
+    node.children.remove
     bindings = eval("#{value}.map{ |#{args}| binding }", scope)
     bindings.each do |each_scope|
       sect = parse(copy.dup.children, each_scope)
       sect.each do |x|
-        node.add_previous_sibling(x)
+        node << x
       end
     end
-    node.unlink
+    node.remove_attribute('each')
+    node.remove_attribute('do')
     value
   end
 
@@ -239,43 +244,21 @@ class RubyTALS
     bindings.each do |each_scope|
       sect = parse(copy.dup, each_scope)
       node.add_previous_sibling(sect)
+      # parse_omit(sect, scope) if sect['omit'] && sect['omit'] != 'false'
     end
     node.unlink
     value
   end
 
-end
-
-
-if $0 == __FILE__
-
-  xml = %q{
-    <html>
-    <body>
-      <test>This is a test.</test>
-      <h1 rtal:content="x">[X]</h1>
-      <span rtal:replace="x" />
-      <div rtal:each="animal" rtal:do="a">
-        <b rtal:content="a">[ANIMAL]</b>
-      </div>
-      <span rtal:attr="class: q">Yea</span>
-      <div rtal:if="animal.size >= 1">
-        <b rtal:content="animal.size">[ANIMAL SIZE]</b>
-      </div>
-    </body>
-    </html>
-  }
-
-  x = '10'  # problem with numbers
-  q = 'beast'
-  #a = "Apple"
-  animal = ['Zebra', 'Monkey', 'Tiger' ]
-
-  rxml = RubyTALS.compile(xml, binding)
-
-  puts
-  puts rxml #.to_xhtml(:indent => 5, :encoding => 'UTF-8')
-  puts
+  #
+  def parse_omit(node, scope)
+    #parse(node.children, scope).each do |x|
+    node.children.each do |x|
+      x.unlink
+      node.add_previous_sibling(x) 
+    end
+    node.unlink
+  end
 
 end
 

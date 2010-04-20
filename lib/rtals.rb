@@ -1,0 +1,1 @@
+require 'rtals/rtal'
