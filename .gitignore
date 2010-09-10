@@ -1,5 +1,6 @@
-.cache
-doc/rdoc
-doc/ri
+doc
+ri
 log
 pkg
+tmp
+site/docs

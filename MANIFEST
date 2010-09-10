@@ -1,15 +1,17 @@
 #!mast -x Syckfile bin lib meta qed test [A-Z]*
-lib/rtals/rtals-old.rb
-lib/rtals/rtals.rb
+lib/rtals/core_ext/opvars.rb
+lib/rtals/rtal.rb
+lib/rtals.rb
 meta/authors
 meta/contact
 meta/created
 meta/description
 meta/homepage
 meta/name
+meta/requires
 meta/summary
 meta/title
 meta/version
+LICENSE
 README
-NEWS
-COPYRIGHT
+HISTORY
