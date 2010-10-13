@@ -53,7 +53,7 @@ require 'rtals/core_ext/opvars'
 # It's a classic Saftey vs. Usability trade-off. Something to
 # consider for the future.
 
-class RTAL
+class RTALS
 
   #
   attr :xml

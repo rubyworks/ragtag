@@ -36,8 +36,11 @@ We use Syckle to manage the build.
 
 == LICENSE
 
+(Apache 2.0 License)
+
 Copyright (c) 2005,2008 Tiger Ops
 
-RTALS is distributed under the terms of the LGPL license.
-Please see the included 'Copyright' file.
+RTALS is distributed under the terms of the Apache 2.0 license.
+
+Please see the included `LICENSE.txt` file for details.
 

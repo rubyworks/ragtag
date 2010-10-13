@@ -44,7 +44,7 @@ customer.tags = [ 'ruby', 'javascript' ]
 customer_class = customer.age > 60 ? 'senior' : 'normal'
 
 
-rxml = RTAL.compile(xml, binding)
+rxml = RTALS.compile(xml, binding)
 
 puts rxml
 
