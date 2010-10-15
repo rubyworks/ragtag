@@ -1,7 +1,7 @@
 require 'nokogiri'
-require 'rtals/core_ext/opvars'
+require 'ragtag/core_ext/opvars'
 
-# = Tag Attribute Language for Ruby
+# = RAGTAG - A Tag Attribute Language for Ruby
 #
 # RubyTals is a Ruby variation on Zope Page Templates and it's TAL specification.
 # It differs from TAL in that it is specifically geared for use by Ruby.
@@ -25,11 +25,11 @@ require 'rtals/core_ext/opvars'
 #   x = 'Our Little Zoo'
 #   animal = ['Zebra', 'Monkey', 'Tiger' ]
 #
-#   puts RTALS.compile(s, binding)
+#   puts Ragtag.compile(s, binding)
 #
 # == Note
 #
-# Presently RTAL clauses can run arbitraty Ruby code. Although
+# Presently RagTag clauses can run arbitraty Ruby code. Although
 # upping the safety level before executing a compiled template
 # should be sufficiently protective in most cases, perhaps it would
 # be better to limit valid expressions to single object references,
@@ -53,7 +53,7 @@ require 'rtals/core_ext/opvars'
 # It's a classic Saftey vs. Usability trade-off. Something to
 # consider for the future.
 
-class RTALS
+class RagTag
 
   #
   attr :xml
@@ -106,7 +106,6 @@ class RTALS
     when Nokogiri::XML::NodeSet
       parse_nodeset(node, scope)
     when Nokogiri::XML::Element
-
       if value = node['define']
         eval(value, scope)
       end

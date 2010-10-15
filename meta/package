@@ -1,6 +1,7 @@
-name    : rtals
-date    : 2010-04-19
-version : 0.5.0
+name    : ragtag
+date    : 2010-10-15
+version : 0.6.0
 
 requires:
   - syckle (test)
+  - qed    (test)

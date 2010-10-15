@@ -1,32 +1,31 @@
-= RTALS
+= RagTag
 
 Copyright (c)2005 Thomas Sawyer (Apache 2.0 License)
 
-* home: http://rubyworks.github.com/rtals
-* code: http://github.com/rubyworks/rtals
+* home: http://rubyworks.github.com/ragtag
+* code: http://github.com/rubyworks/ragtag
 
 
 == OVERVIEW
 
-RTALS stands for Ruby Tag Attribute Lanaguage System. Yea, it's an
+RagTag if a Ruby-based template attribute lanaguage (TAL). Yea, it's an
 acronym. Don't blame me, blame those Zope people ;)
 
-RTALS is not fully compatiable with the Zope TAL sepcification.
-It's first priority is to provide a good attribute based
-template system for Ruby. But beyond that it does try to support
-as much of the Zope spec as it can.
+RagTag is only loosely based on the Zope TAL sepcification.
+It's first priority has been to provide a good attribute based
+template system for _Ruby_.
 
 
 == USAGE
 
-For the moment please see the WIKI[http://wiki.github.com/rubyworks/rtals/].
+For the moment please see the WIKI[http://wiki.github.com/rubyworks/ragtag/].
 
 
 == HOW TO INSTALL
 
 Yea you know the procedure:
 
-  $ gem install rtals
+  $ gem install ragtag
 
 
 == DEVELOPMENT

@@ -1,23 +1,24 @@
 ---
-title  : RTALS
+title  : RagTag
 suite  : rubyworks
-summary: Ruby Template Attribute Language
+summary: A Ruby Template Attribute Language
 contact: Trans <transfire@gmail.com>
-license: MIT
+license: Apache 2.0
 created: 2005-11-26
 
 authors:
   - Thomas Sawyer
 
 description:
-  RTALS is a Ruby variation on Zope Page Templates and it's TAL specification.
-  It differs from ZPT in that it is specifically geared for use by Ruby.
+  RagTag is a Ruby variation loosely based on Zope Page Templates and it's TAL
+  specification. It differs from ZPT in that it is specifically geared for use
+  by Ruby.
 
 resources:
-  homepage    :
-  development :
-  repository  :
-  subscribe   : rubyworks-mailinglist+subscribe@googlegroups.com
+  home: http://rubyworks.github.com/ragtag
+  code: http://github.com/rubyworks/ragtag
+  mail: http://groups.google.com/rubyworks-mailinglist
+  repo: git://github.com/rubyworks/ragtag.git
 
 copyright:
   Copyright (c) 2005 Thomas Sawyer
