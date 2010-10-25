@@ -1,308 +1,148 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<HTML>
+<HEAD>
+  <TITLE>RagTag</TITLE>
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+  <META NAME="description" CONTENT="RagTag is a Ruby variation loosely based on Zope Page Templates and it's TAL specification. It differs from ZPT in that it is specifically geared for use by Ruby."> 
 
-  <title>RTALS</title>
+  <LINK rel="shortcut icon" href="assets/ruby.png"/>
 
-  <link rel="SHORTCUT ICON" href="assets/icon/ruby.png">
+  <LINK type="text/css" rel="stylesheet" href="assets/reset.css" />
+  <LINK type="text/css" rel="stylesheet" href="assets/custom.css" />
 
-  <link type="text/css" rel="stylesheet" href="assets/rdoc.css" media="screen" />
-  <link type="text/css" rel="stylesheet" href="assets/highlight/styles/github.css" title="GitHub" />
+  <SCRIPT language="javascript" type="text/javascript" src="assets/jquery.js"></SCRIPT>
+  <SCRIPT language="javascript" type="text/javascript" src="assets/highlight.js"></SCRIPT>
 
-  <script type="text/javascript" charset="utf-8" src="assets/jquery.js"></script>
-  <script type="text/javascript" charset="utf-8" src="assets/highlight/highlight.pack.js"></script>
-  <script type="text/javascript" charset="utf-8" src="assets/quicksearch.js"></script>
-  <script type="text/javascript" charset="utf-8" src="assets/main.js"></script>
-
-  <script type="text/javascript">
-    $(document).ready( function() {
-      $('#documentation pre').wrapInner('<code></code>');
+  <SCRIPT type="text/javascript">
+    $(document).ready(function() {
+      $('pre').wrapInner('<code></code>');
       hljs.tabReplace = '    ';
       hljs.initHighlightingOnLoad('ruby');
-
-	    hookSourceViews();
-	    hookDebuggingToggle();
-	    hookQuickSearch();
-	    highlightLocationTarget();
-
-	    $('ul.link-list a').bind( "click", highlightClickTarget );
     });
-  </script>
-</head>
-<body class="indexpage">
-<div id="main">
+  </SCRIPT>
 
-  
-  <div class="head">
-    <h1>
-      <img src="assets/icon/project.png" align="absmiddle">&nbsp;
-      <a href="index.html">RTALS</a>
-    </h1>
+  <LINK type="text/css" rel="stylesheet" href="assets/highlight.css" />
+</HEAD>
+<BODY>
+
+<div id="header">
+<div class="centered">
+  <div class="title">
+    <h1>RagTag</h1>
   </div>
+</div>
+</div>
 
-  <div id="metadata">
-    <div id="project-metadata">
-
-      
-      
-      <div id="fileindex-section" class="section project-section">
-        <h3 class="section-header">Information</h3>
-        <ul>
-        
-          <li class="file"><a href="files/HISTORY.html">HISTORY</a></li>
-        
-          <li class="file"><a href="files/LICENSE.html">LICENSE</a></li>
-        
-          <li class="file"><a href="files/README.html">README</a></li>
-        
-        </ul>
-      </div>
-      
-
-      <div id="classindex-section" class="section project-section">
-        <h3 class="section-header">Class Index
-          <span class="search-toggle"><img src="assets/icon/find.png"
-            height="16" width="16" alt="[+]"
-            title="show/hide quicksearch" /></span></h3>
-        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
-        <fieldset>
-          <legend>Quicksearch</legend>
-          <input type="text" name="quicksearch" value=""
-            class="quicksearch-field" />
-        </fieldset>
-        </form>
-
-        <ul class="link-list">
-        
-          <li class="class"><a href="classes/Binding.html">Binding</a></li>
-        
-          <li class="class"><a href="classes/RTAL.html">RTAL</a></li>
-        
-        </ul>
-        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
-      </div>
-
-      <!-- METHODS -->
-      <div id="methodindex-section" class="section project-section">
-        <h3 class="section-header">Method Index</h3>
-        <ul>
-          
-            
-            <li class="singleton" style="clear: both;">
-              <span class="method-parent-aside">RTAL</span>
-              <a href="classes/RTAL.html#M000002">::compile</a>
-            </li>
-          
-            
-            <li class="singleton" style="clear: both;">
-              <span class="method-parent-aside">RTAL</span>
-              <a href="classes/RTAL.html#M000003">::new</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">Binding</span>
-              <a href="classes/Binding.html#M000000">#[]</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">Binding</span>
-              <a href="classes/Binding.html#M000001">#[]=</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">RTAL</span>
-              <a href="classes/RTAL.html#M000004">#compile</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">RTAL</span>
-              <a href="classes/RTAL.html#M000005">#parse</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">RTAL</span>
-              <a href="classes/RTAL.html#M000009">#parse_attributes</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">RTAL</span>
-              <a href="classes/RTAL.html#M000007">#parse_content</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">RTAL</span>
-              <a href="classes/RTAL.html#M000011">#parse_each</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">RTAL</span>
-              <a href="classes/RTAL.html#M000010">#parse_if</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">RTAL</span>
-              <a href="classes/RTAL.html#M000006">#parse_nodeset</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">RTAL</span>
-              <a href="classes/RTAL.html#M000013">#parse_omit</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">RTAL</span>
-              <a href="classes/RTAL.html#M000012">#parse_repeat</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">RTAL</span>
-              <a href="classes/RTAL.html#M000008">#parse_replace</a>
-            </li>
-          
-        </ul>
-      </div>
-
-    </div>
-
-    <div id="validator-badges">
-      
-      <div style="float: right; margin-right: 5px;">
-        <a href="http://validator.w3.org/check/referer"><img src="assets/icon/check.png" alt="[Validate]" height="16" width="16" /></a>
-      </div>
-      Generated with <a href="http://github.com/proutils/webri">WebRI NewFish</a> 1.2
-      <br/><br/> 
-    </div>
+<div class="main">
+<div class="centered">
+  <div id="nav">
+    <ul>
+      <li><a href="docs/api">Api</a></li>
+      <li><a href="docs/qed">Qed</a></li>
+      <li><a href="http://groups.google.com/rubyworks-mailinglist">Mail</a></li>
+      <li><a href="http://github.com/rubyworks/ragtag">Code</a></li>
+    </ul>
   </div>
+  <div id="doc" style="clear: both;">
+    <p>RagTag is a TAL (tag attribute lanaguage) templating system for Ruby. 
+    It is very loosely based on Zope Page Templates and it's TAL specification.
+    It differs from ZPT in that it is specifically geared for use by Ruby.</p>
 
-<!--
-  
-  
-  <h2>Files</h2>
-  <ul>
-    
-      <li class="file"><a href="files/HISTORY.html">HISTORY</a></li>
-    
-      <li class="file"><a href="files/LICENSE.html">LICENSE</a></li>
-    
-      <li class="file"><a href="files/README.html">README</a></li>
-    
-  </ul>
-  
+    <a href="#" onclick="$('#readme').toggle();">Toggle README</a>
+  </div>
+</div>
+</div>
 
-  <h2>Classes/Modules</h2>
-  <ul>
-    
-    <li class="class"><a href="classes/Binding.html">Binding</a></li>
-    
-    <li class="class"><a href="classes/RTAL.html">RTAL</a></li>
-    
-  </ul>
-
-  <h2>Methods</h2>
-  <ul>
-    
-      <li><a href="classes/RTAL.html#M000002">::compile &mdash; RTAL</a></li>
-    
-      <li><a href="classes/RTAL.html#M000003">::new &mdash; RTAL</a></li>
-    
-      <li><a href="classes/Binding.html#M000000">#[] &mdash; Binding</a></li>
-    
-      <li><a href="classes/Binding.html#M000001">#[]= &mdash; Binding</a></li>
-    
-      <li><a href="classes/RTAL.html#M000004">#compile &mdash; RTAL</a></li>
-    
-      <li><a href="classes/RTAL.html#M000005">#parse &mdash; RTAL</a></li>
-    
-      <li><a href="classes/RTAL.html#M000009">#parse_attributes &mdash; RTAL</a></li>
-    
-      <li><a href="classes/RTAL.html#M000007">#parse_content &mdash; RTAL</a></li>
-    
-      <li><a href="classes/RTAL.html#M000011">#parse_each &mdash; RTAL</a></li>
-    
-      <li><a href="classes/RTAL.html#M000010">#parse_if &mdash; RTAL</a></li>
-    
-      <li><a href="classes/RTAL.html#M000006">#parse_nodeset &mdash; RTAL</a></li>
-    
-      <li><a href="classes/RTAL.html#M000013">#parse_omit &mdash; RTAL</a></li>
-    
-      <li><a href="classes/RTAL.html#M000012">#parse_repeat &mdash; RTAL</a></li>
-    
-      <li><a href="classes/RTAL.html#M000008">#parse_replace &mdash; RTAL</a></li>
-    
-  </ul>
--->
-
-  
-  <div id="documentation">
-    <h1>RTALS</h1>
+<div id="readme" style="display: none;">
+<div class="centered">
+  <h1>RagTag</h1>
+<p>
+Copyright &#169;2005 Thomas Sawyer<br/>(Apache 2.0 License)
+</p>
 <ul>
-<li>home: <a
-href="http://rubyworks.github.com/rtals">rubyworks.github.com/rtals</a>
-
+<li><p>
+home: <a
+href="http://rubyworks.github.com/ragtag">rubyworks.github.com/ragtag</a>
+</p>
 </li>
-<li>work: <a
-href="http://github.com/rubyworks/rtals">github.com/rubyworks/rtals</a>
-
+<li><p>
+code: <a
+href="http://github.com/rubyworks/ragtag">github.com/rubyworks/ragtag</a>
+</p>
 </li>
 </ul>
 <h2>OVERVIEW</h2>
 <p>
-RTALS stands for Ruby Tag Attribute Lanaguage System. Yea, it&#8217;s an
-acronym. Don&#8217;t blame me, blame those Zope people ;)
+RagTag is a Ruby-based template attribute lanaguage (TAL). Yea, it&#8217;s
+an acronym. Don&#8217;t blame me, blame those Zope people ;)
 </p>
 <p>
-RTALS is not fully compatiable with the Zope TAL sepcification. It&#8217;s
-first priority is to provide a good attribute based template system for
-Ruby. But beyond that it does try to support as much of the Zope spec as it
-can.
+RagTag is only loosely based on the Zope TAL sepcification. It&#8217;s
+first priority has been to provide a good attribute based template system
+for <em>Ruby</em>.
 </p>
 <h2>USAGE</h2>
 <p>
 For the moment please see the <a
-href="http://wiki.github.com/rubyworks/rtals/">WIKI</a>.
+href="http://wiki.github.com/rubyworks/ragtag/">Wiki</a>.
 </p>
 <h2>HOW TO INSTALL</h2>
 <p>
 Yea you know the procedure:
 </p>
 <pre>
-  $ gem install rtals
+  $ gem install ragtag
 </pre>
 <h2>DEVELOPMENT</h2>
 <p>
-We use GitHub ge to host the project.
+We use <a href="http://github.com/rubyworks/ragtag">GitHub</a> to host the
+project.
 </p>
 <p>
-We use Syckle to manage the build.
+We use <a href="http://github.com/proutils/syckle">Syckle</a> to manage the
+build.
 </p>
-<h2><a href="LICENSE.html">LICENSE</a></h2>
+<h2>COPYRIGHT</h2>
 <p>
-Copyright &#169; 2005,2008 Tiger Ops
+(Apache 2.0 License)
 </p>
 <p>
-RTALS is distributed under the terms of the LGPL license. Please see the
-included &#8216;Copyright&#8217; file.
+Copyright &#169; 2005 Thomas Sawyer
 </p>
-
-  </div>
-  
-
+<p>
+Licensed under the Apache License, Version 2.0 (the &#8220;License&#8221;);
+you may not use this file except in compliance with the License. You may
+obtain a copy of the License at
+</p>
+<pre>
+   http://www.apache.org/licenses/LICENSE-2.0
+</pre>
+<p>
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &#8220;AS IS&#8221;
+BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+implied. See the License for the specific language governing permissions
+and limitations under the License.
+</p>
+<p>
+See the included `LICENSE.txt` file for details.
+</p>
 </div>
-</body>
-</html>
+</div>
 
+<div id="footer">
+<div class="centered">
+  <div class="advert">
+    <!-- TODO: %= advert % -->
+  </div>
+  <div class="copyright">
+    Copyright (c) 2005 by <a href="http://trans.github.com">Thomas Sawyer</a> <br/>
+    Artwork by <a href="http://bibliodyssey.blogspot.com/2008/10/rag-tag-and-bobtail.html">Edith Farmiloe</a> circa. 1899 <br/>
+    Website generated by <a href="http://proutils.github.com/webme">sow clean.webme</a>.
+  </div>
+</div>
+</div>
+
+</BODY>
+</HTML>
+
+<!-- WebMe Copyright (c) 2009 Thomas Sawyer -->

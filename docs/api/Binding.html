@@ -8,16 +8,16 @@
   <title>Class: Binding</title>
 
   
-    <link rel="SHORTCUT ICON" href="../assets/img/class.png">
+    <link rel="SHORTCUT ICON" href="./assets/icon/class.png">
   
 
-  <link type="text/css" rel="stylesheet" href="../assets/rdoc.css" media="screen" />
-  <link type="text/css" rel="stylesheet" href="../assets/highlight/styles/github.css" title="GitHub" />
+  <link type="text/css" rel="stylesheet" href="./assets/rdoc.css" media="screen" />
+  <link type="text/css" rel="stylesheet" href="./assets/highlight/styles/github.css" title="GitHub" />
 
-  <script type="text/javascript" charset="utf-8" src="../assets/jquery.js"></script>
-  <script type="text/javascript" charset="utf-8" src="../assets/highlight/highlight.pack.js"></script>
-  <script type="text/javascript" charset="utf-8" src="../assets/quicksearch.js"></script>
-  <script type="text/javascript" charset="utf-8" src="../assets/main.js"></script>
+  <script type="text/javascript" charset="utf-8" src="./assets/jquery.js"></script>
+  <script type="text/javascript" charset="utf-8" src="./assets/highlight/highlight.pack.js"></script>
+  <script type="text/javascript" charset="utf-8" src="./assets/quicksearch.js"></script>
+  <script type="text/javascript" charset="utf-8" src="./assets/main.js"></script>
 
   <script type="text/javascript">
     $(document).ready( function() {
@@ -40,9 +40,9 @@
   <div class="head">
     <h1>
       
-        <img src="../assets/img/class.png" align="absmiddle">&nbsp;
+        <img src="./assets/icon/class.png" align="absmiddle">&nbsp;
       
-      <a href="../index.html">RTALS</a>&nbsp;
+      <a href="./index.html">RagTag</a>&nbsp;
       <a href="/">Binding</a>
     </h1>
   </div>
@@ -55,8 +55,8 @@
         <div class="section-body">
           <ul>
           
-            <li class="file"><a href="../files/lib/rtals/core_ext/opvars_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
-              class="thickbox" title="lib/rtals/core_ext/opvars.rb">lib/rtals/core_ext/opvars.rb</a></li>
+            <li class="file"><a href="./lib/ragtag/core_ext/opvars_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/ragtag/core_ext/opvars.rb">lib/ragtag/core_ext/opvars.rb</a></li>
           
           </ul>
         </div>
@@ -93,12 +93,12 @@
           
             
             <li class="method">
-              <a href="#M000000">#[]</a>
+              <a href="#method-i-%5B%5D">#[]</a>
             </li>
           
             
             <li class="method">
-              <a href="#M000001">#[]=</a>
+              <a href="#method-i-%5B%5D%3D">#[]=</a>
             </li>
           
         </ul>
@@ -116,11 +116,11 @@
         <h3 class="section-header">Information</h3>
         <ul>
         
-          <li class="file"><a href="../files/HISTORY.html">HISTORY</a></li>
+          <li class="file"><a href="./HISTORY_rdoc.html">HISTORY.rdoc</a></li>
         
-          <li class="file"><a href="../files/LICENSE.html">LICENSE</a></li>
+          <li class="file"><a href="./LICENSE_txt.html">LICENSE.txt</a></li>
         
-          <li class="file"><a href="../files/README.html">README</a></li>
+          <li class="file"><a href="./README_rdoc.html">README.rdoc</a></li>
         
         </ul>
       </div>
@@ -128,7 +128,7 @@
 
       <div id="classindex-section" class="section project-section">
         <h3 class="section-header">Class Index
-          <span class="search-toggle"><img src="../assets/icon/find.png"
+          <span class="search-toggle"><img src="./assets/icon/find.png"
             height="16" width="16" alt="[+]"
             title="show/hide quicksearch" /></span></h3>
         <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
@@ -142,9 +142,9 @@
         <!-- classpage.html : classes -->
         <ul class="link-list">
         
-          <li class="class"><a href="../classes/Binding.html">Binding</a></li>
+          <li class="class"><a href="./Binding.html">Binding</a></li>
         
-          <li class="class"><a href="../classes/RTAL.html">RTAL</a></li>
+          <li class="class"><a href="./RagTag.html">RagTag</a></li>
         
         </ul>
         <div id="no-class-search-results" style="display: none;">No matching classes.</div>
@@ -154,9 +154,9 @@
     <div id="validator-badges">
       
       <div style="float: right; margin-right: 5px;">
-        <a href="http://validator.w3.org/check/referer"><img src="../assets/icon/check.png" alt="[Validate]" height="16" width="16" /></a>
+        <a href="http://validator.w3.org/check/referer"><img src="./assets/icon/check.png" alt="[Validate]" height="16" width="16" /></a>
       </div>
-      Generated with <a href="http://github.com/proutils/webri">WebRI Redfish</a> 1.2
+      Generated with <a href="http://rubyworks.github.com/rdazzle">RDazzle Newfish</a> 1.4.0
       <br/><br/>
     </div>
   </div>
@@ -184,7 +184,7 @@
 
     
       <div id="--method" class="method-detail ">
-        <a name="M000000"></a>
+        <a name="method-i-%5B%5D"></a>
 
         <div class="method-heading">
         
@@ -201,18 +201,17 @@ Returns the value of some variable.
 </p>
 <pre>
   a = 2
-  binding[&quot;a&quot;]  #=&gt; 2
-</pre>
+  binding[&quot;a&quot;]  #=&gt; 2</pre>
           
 
           
           <div class="method-source-code"
             id="--source">
 <pre>
-<span class="ruby-comment cmt"># File lib/rtals/core_ext/opvars.rb, line 10</span>
-  <span class="ruby-keyword kw">def</span> <span class="ruby-operator">[]</span>( <span class="ruby-identifier">x</span> )
-    <span class="ruby-identifier">eval</span>( <span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_s</span> )
-  <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/ragtag/core_ext/opvars.rb, line 10</span>
+10:   <span class="ruby-keyword kw">def</span> <span class="ruby-operator">[]</span>( <span class="ruby-identifier">x</span> )
+11:     <span class="ruby-identifier">eval</span>( <span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_s</span> )
+12:   <span class="ruby-keyword kw">end</span></pre>
           </div>
           
         </div>
@@ -222,7 +221,7 @@ Returns the value of some variable.
 
     
       <div id="--method" class="method-detail ">
-        <a name="M000001"></a>
+        <a name="method-i-%5B%5D%3D"></a>
 
         <div class="method-heading">
         
@@ -239,18 +238,17 @@ Set the value of a local variable.
 </p>
 <pre>
   binding[&quot;a&quot;] = 4
-  a  #=&gt; 4
-</pre>
+  a  #=&gt; 4</pre>
           
 
           
           <div class="method-source-code"
             id="--source">
 <pre>
-<span class="ruby-comment cmt"># File lib/rtals/core_ext/opvars.rb, line 19</span>
-  <span class="ruby-keyword kw">def</span> <span class="ruby-operator">[]=</span>( <span class="ruby-identifier">l</span>, <span class="ruby-identifier">v</span> )
-    <span class="ruby-identifier">eval</span>( <span class="ruby-node">&quot;lambda {|v| #{l} = v}&quot;</span>).<span class="ruby-identifier">call</span>( <span class="ruby-identifier">v</span> )
-  <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/ragtag/core_ext/opvars.rb, line 19</span>
+19:   <span class="ruby-keyword kw">def</span> <span class="ruby-operator">[]=</span>( <span class="ruby-identifier">l</span>, <span class="ruby-identifier">v</span> )
+20:     <span class="ruby-identifier">eval</span>( <span class="ruby-node">&quot;lambda {|v| #{l} = v}&quot;</span>).<span class="ruby-identifier">call</span>( <span class="ruby-identifier">v</span> )
+21:   <span class="ruby-keyword kw">end</span></pre>
           </div>
           
         </div>

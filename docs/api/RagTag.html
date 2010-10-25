@@ -1,0 +1,841 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+  <title>Class: RagTag</title>
+
+  
+    <link rel="SHORTCUT ICON" href="./assets/icon/class.png">
+  
+
+  <link type="text/css" rel="stylesheet" href="./assets/rdoc.css" media="screen" />
+  <link type="text/css" rel="stylesheet" href="./assets/highlight/styles/github.css" title="GitHub" />
+
+  <script type="text/javascript" charset="utf-8" src="./assets/jquery.js"></script>
+  <script type="text/javascript" charset="utf-8" src="./assets/highlight/highlight.pack.js"></script>
+  <script type="text/javascript" charset="utf-8" src="./assets/quicksearch.js"></script>
+  <script type="text/javascript" charset="utf-8" src="./assets/main.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready( function() {
+      $('#documentation pre').wrapInner('<code></code>');
+      hljs.tabReplace = '    ';
+      hljs.initHighlightingOnLoad('ruby');
+
+	    hookSourceViews();
+	    hookDebuggingToggle();
+	    hookQuickSearch();
+	    highlightLocationTarget();
+
+	    $('ul.link-list a').bind( "click", highlightClickTarget );
+    });
+  </script>
+</head>
+<body class="class">
+<div id="main">
+
+  <div class="head">
+    <h1>
+      
+        <img src="./assets/icon/class.png" align="absmiddle">&nbsp;
+      
+      <a href="./index.html">RagTag</a>&nbsp;
+      <a href="/">RagTag</a>
+    </h1>
+  </div>
+
+  <div id="metadata">
+    <div id="project-metadata">
+
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li class="file"><a href="./lib/ragtag_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/ragtag.rb">lib/ragtag.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      <!-- What about Git info, or Hg info? This seems almost silly, albeit kind of cool. -->
+      <!-- TODO: generalize this for all SCMs -->
+
+      
+    </div>
+
+    <div id="class-metadata">
+
+      <!-- Parent Class -->
+      
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        <ul>
+          
+          <li class="class">Object</li>
+          
+        </ul>
+      </div>
+      
+
+      <!-- Namespace Contents -->
+      
+
+      <!-- Method Quickref -->
+      
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+            
+            <li class="singleton">
+              <a href="#method-c-compile">::compile</a>
+            </li>
+          
+            
+            <li class="singleton">
+              <a href="#method-c-new">::new</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-compile">#compile</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-parse">#parse</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-parse_attributes">#parse_attributes</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-parse_content">#parse_content</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-parse_each">#parse_each</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-parse_if">#parse_if</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-parse_nodeset">#parse_nodeset</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-parse_omit">#parse_omit</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-parse_repeat">#parse_repeat</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-parse_replace">#parse_replace</a>
+            </li>
+          
+        </ul>
+      </div>
+      
+
+      <!-- Included Modules -->
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Information</h3>
+        <ul>
+        
+          <li class="file"><a href="./HISTORY_rdoc.html">HISTORY.rdoc</a></li>
+        
+          <li class="file"><a href="./LICENSE_txt.html">LICENSE.txt</a></li>
+        
+          <li class="file"><a href="./README_rdoc.html">README.rdoc</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class Index
+          <span class="search-toggle"><img src="./assets/icon/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <!-- classpage.html : classes -->
+        <ul class="link-list">
+        
+          <li class="class"><a href="./Binding.html">Binding</a></li>
+        
+          <li class="class"><a href="./RagTag.html">RagTag</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+    </div>
+
+    <div id="validator-badges">
+      
+      <div style="float: right; margin-right: 5px;">
+        <a href="http://validator.w3.org/check/referer"><img src="./assets/icon/check.png" alt="[Validate]" height="16" width="16" /></a>
+      </div>
+      Generated with <a href="http://rubyworks.github.com/rdazzle">RDazzle Newfish</a> 1.4.0
+      <br/><br/>
+    </div>
+  </div>
+
+  <div id="documentation">
+
+    <div id="description">
+      
+
+      <h1>RAGTAG - A Tag Attribute Language for Ruby</h1>
+<p>
+RubyTals is a Ruby variation on Zope Page Templates and it&#8217;s TAL
+specification. It differs from TAL in that it is specifically geared for
+use by Ruby.
+</p>
+<h2>Usage</h2>
+<pre>
+  s = %q{
+    &lt;html&gt;
+    &lt;body&gt;
+      &lt;h1 r:content=&quot;x&quot;&gt;[X]&lt;/h1&gt;
+      &lt;div r:each=&quot;animal&quot; r:do=&quot;a&quot;&gt;
+        &lt;b r:content=&quot;a&quot;&gt;[ANIMAL]&lt;/b&gt;
+      &lt;/div&gt;
+      &lt;div r:if=&quot;animal.size &gt; 1&quot;&gt;
+        There are &lt;b r:content=&quot;animal.size&quot;&gt;[ANIMAL SIZE]&lt;/b&gt; animals.
+      &lt;/div&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+  }
+
+  x = 'Our Little Zoo'
+  animal = ['Zebra', 'Monkey', 'Tiger' ]
+
+  puts Ragtag.compile(s, binding)
+</pre>
+<h2>Note</h2>
+<p>
+Presently <a href="RagTag.html">RagTag</a> clauses can run arbitraty Ruby
+code. Although upping the safety level before executing a compiled template
+should be sufficiently protective in most cases, perhaps it would be better
+to limit valid expressions to single object references, ie.
+&#8216;this.that&#8217;, and then use a substitution of &#8217;.&#8217; for
+&#8217;/&#8217;. Not only would this be highly protective, it would also be
+more compatible with the original TAL spec; albeit this isn&#8217;t exacty
+how TALs interprets the &#8217;/&#8217; divider.
+</p>
+<p>
+On the other hand perhaps it is too much restraint. For instance it would
+require the if-clause in the above exmaple to be something like:
+</p>
+<pre>
+      &lt;div r:if=&quot;animal/plenty&quot;&gt;
+</pre>
+<p>
+and have a definition in the evaluating code:
+</p>
+<pre>
+  def animal.plenty
+    size &gt; 1
+  end
+</pre>
+<p>
+It&#8217;s a classic Saftey vs. Usability trade-off. Something to consider
+for the future.
+</p>
+
+    </div>
+
+    <!-- Constants -->
+    
+
+    <!-- Attributes -->
+    
+    <div id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="xml-attribute-method" class="method-detail">
+        <a name="xml"></a>
+        
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">xml</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="scope-attribute-method" class="method-detail">
+        <a name="scope"></a>
+        
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">scope</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- Methods -->
+    
+    <div id="public-class-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="compile-method" class="method-detail ">
+        <a name="method-c-compile"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">compile</span><span
+            class="method-args">(xml, scope=nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="compile-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ragtag.rb, line 66</span>
+66:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">compile</span>(<span class="ruby-identifier">xml</span>, <span class="ruby-identifier">scope</span>=<span class="ruby-keyword kw">nil</span>)
+67:     <span class="ruby-identifier">new</span>(<span class="ruby-identifier">xml</span>).<span class="ruby-identifier">compile</span>(<span class="ruby-identifier">scope</span>)
+68:   <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="new-method" class="method-detail ">
+        <a name="method-c-new"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">new</span><span
+            class="method-args">(xml)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="new-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ragtag.rb, line 77</span>
+77:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">xml</span>)
+78:     <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">xml</span>
+79:     <span class="ruby-keyword kw">when</span> <span class="ruby-constant">String</span>
+80:       <span class="ruby-ivar">@xml</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span>(<span class="ruby-identifier">xml</span>)
+81:     <span class="ruby-keyword kw">else</span>
+82:       <span class="ruby-ivar">@xml</span> = <span class="ruby-identifier">xml</span>
+83:     <span class="ruby-keyword kw">end</span>
+84:   <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+    </div>
+  
+    <div id="public-instance-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="compile-method" class="method-detail ">
+        <a name="method-i-compile"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">compile</span><span
+            class="method-args">(scope=nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="compile-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ragtag.rb, line 87</span>
+87:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">compile</span>(<span class="ruby-identifier">scope</span>=<span class="ruby-keyword kw">nil</span>)
+88:     <span class="ruby-identifier">scope</span> = <span class="ruby-identifier">scope</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">$TOPLEVEL_BINDING</span>
+89:     <span class="ruby-identifier">parse</span>(<span class="ruby-ivar">@xml</span>.<span class="ruby-identifier">root</span>, <span class="ruby-identifier">scope</span>)
+90:     <span class="ruby-identifier">xml</span>
+91:   <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="parse-method" class="method-detail ">
+        <a name="method-i-parse"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">parse</span><span
+            class="method-args">(node, scope)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="parse-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ragtag.rb, line 103</span>
+103:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parse</span>(<span class="ruby-identifier">node</span>, <span class="ruby-identifier">scope</span>)
+104:     <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">node</span>
+105:     <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Text</span>
+106:       <span class="ruby-comment cmt"># nothing</span>
+107:     <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">NodeSet</span>
+108:       <span class="ruby-identifier">parse_nodeset</span>(<span class="ruby-identifier">node</span>, <span class="ruby-identifier">scope</span>)
+109:     <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Element</span>
+110:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">value</span> = <span class="ruby-identifier">node</span>[<span class="ruby-value str">'define'</span>]
+111:         <span class="ruby-identifier">eval</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">scope</span>)
+112:       <span class="ruby-keyword kw">end</span>
+113: 
+114:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">node</span>[<span class="ruby-value str">'if'</span>]
+115:         <span class="ruby-identifier">parse_if</span>(<span class="ruby-identifier">node</span>, <span class="ruby-identifier">scope</span>)
+116:       <span class="ruby-comment cmt">#elsif node['condition']</span>
+117:       <span class="ruby-comment cmt">#  parse_condition(node, scope)</span>
+118:       <span class="ruby-keyword kw">end</span>
+119: 
+120:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">node</span>[<span class="ruby-value str">'content'</span>]
+121:         <span class="ruby-identifier">parse_content</span>(<span class="ruby-identifier">node</span>, <span class="ruby-identifier">scope</span>)
+122:       <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">node</span>[<span class="ruby-value str">'replace'</span>]
+123:         <span class="ruby-identifier">parse_replace</span>(<span class="ruby-identifier">node</span>, <span class="ruby-identifier">scope</span>)
+124:       <span class="ruby-keyword kw">end</span>
+125: 
+126:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">node</span>[<span class="ruby-value str">'attr'</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">node</span>[<span class="ruby-value str">'attributes'</span>]
+127:         <span class="ruby-identifier">parse_attributes</span>(<span class="ruby-identifier">node</span>, <span class="ruby-identifier">scope</span>)
+128:       <span class="ruby-keyword kw">end</span>
+129: 
+130:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">node</span>[<span class="ruby-value str">'each'</span>]
+131:         <span class="ruby-identifier">parse_each</span>(<span class="ruby-identifier">node</span>, <span class="ruby-identifier">scope</span>)
+132:         <span class="ruby-keyword kw">return</span>
+133:       <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">node</span>[<span class="ruby-value str">'repeat'</span>]
+134:         <span class="ruby-identifier">parse_repeat</span>(<span class="ruby-identifier">node</span>, <span class="ruby-identifier">scope</span>)
+135:         <span class="ruby-keyword kw">return</span>
+136:       <span class="ruby-keyword kw">end</span>
+137: 
+138:       <span class="ruby-identifier">node</span>.<span class="ruby-identifier">children</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">child</span><span class="ruby-operator">|</span>
+139:         <span class="ruby-identifier">parse</span>(<span class="ruby-identifier">child</span>, <span class="ruby-identifier">scope</span>)
+140:       <span class="ruby-keyword kw">end</span>
+141: 
+142:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">node</span>[<span class="ruby-value str">'omit'</span>] <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">node</span>[<span class="ruby-value str">'omit'</span>] <span class="ruby-operator">!=</span> <span class="ruby-value str">'false'</span>
+143:         <span class="ruby-identifier">parse_omit</span>(<span class="ruby-identifier">node</span>, <span class="ruby-identifier">scope</span>)
+144:       <span class="ruby-keyword kw">end</span>
+145:     <span class="ruby-keyword kw">else</span>
+146:       <span class="ruby-identifier">raise</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">inspect</span>
+147:     <span class="ruby-keyword kw">end</span>
+148:     <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">node</span>
+149:   <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="parse-attributes-method" class="method-detail ">
+        <a name="method-i-parse_attributes"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">parse_attributes</span><span
+            class="method-args">(node, scope)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="parse-attributes-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ragtag.rb, line 174</span>
+174:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parse_attributes</span>(<span class="ruby-identifier">node</span>, <span class="ruby-identifier">scope</span>)
+175:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">attrs</span> = <span class="ruby-identifier">node</span>[<span class="ruby-value str">'attr'</span>]
+176:       <span class="ruby-identifier">assoc</span> = <span class="ruby-identifier">attrs</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">','</span>).<span class="ruby-identifier">map</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">strip</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">':'</span>) }
+177:       <span class="ruby-identifier">assoc</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span>(<span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span>)<span class="ruby-operator">|</span>
+178:         <span class="ruby-identifier">node</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-identifier">eval</span>(<span class="ruby-identifier">v</span>, <span class="ruby-identifier">scope</span>).<span class="ruby-identifier">to_s</span>
+179:       <span class="ruby-keyword kw">end</span>
+180:       <span class="ruby-identifier">node</span>.<span class="ruby-identifier">remove_attribute</span>(<span class="ruby-value str">'attr'</span>)
+181:     <span class="ruby-keyword kw">end</span>
+182:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">attrs</span> = <span class="ruby-identifier">node</span>[<span class="ruby-value str">'attributes'</span>]
+183:       <span class="ruby-identifier">assoc</span> = <span class="ruby-identifier">attrs</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">','</span>).<span class="ruby-identifier">map</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">strip</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">':'</span>) }
+184:       <span class="ruby-identifier">assoc</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span>(<span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span>)<span class="ruby-operator">|</span>
+185:         <span class="ruby-identifier">node</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-identifier">eval</span>(<span class="ruby-identifier">v</span>, <span class="ruby-identifier">scope</span>).<span class="ruby-identifier">to_s</span>
+186:       <span class="ruby-keyword kw">end</span>
+187:       <span class="ruby-identifier">node</span>.<span class="ruby-identifier">remove_attribute</span>(<span class="ruby-value str">'attributes'</span>)
+188:     <span class="ruby-keyword kw">end</span>
+189:     <span class="ruby-identifier">node</span>
+190:   <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="parse-content-method" class="method-detail ">
+        <a name="method-i-parse_content"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">parse_content</span><span
+            class="method-args">(node, scope)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="parse-content-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ragtag.rb, line 160</span>
+160:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parse_content</span>(<span class="ruby-identifier">node</span>, <span class="ruby-identifier">scope</span>)
+161:     <span class="ruby-identifier">value</span> = <span class="ruby-identifier">node</span>[<span class="ruby-value str">'content'</span>]
+162:     <span class="ruby-identifier">node</span>.<span class="ruby-identifier">content</span> = <span class="ruby-identifier">eval</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">scope</span>)
+163:     <span class="ruby-identifier">node</span>.<span class="ruby-identifier">remove_attribute</span>(<span class="ruby-value str">'content'</span>)
+164:   <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="parse-each-method" class="method-detail ">
+        <a name="method-i-parse_each"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">parse_each</span><span
+            class="method-args">(node, scope)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="parse-each-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ragtag.rb, line 219</span>
+219:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parse_each</span>(<span class="ruby-identifier">node</span>, <span class="ruby-identifier">scope</span>)
+220:     <span class="ruby-identifier">value</span> = <span class="ruby-identifier">node</span>[<span class="ruby-value str">'each'</span>]
+221:     <span class="ruby-identifier">args</span>  = <span class="ruby-identifier">node</span>[<span class="ruby-value str">'do'</span>] <span class="ruby-operator">||</span> <span class="ruby-value str">'x'</span>
+222:     <span class="ruby-identifier">copy</span>  = <span class="ruby-identifier">node</span>.<span class="ruby-identifier">dup</span>
+223:     <span class="ruby-identifier">node</span>.<span class="ruby-identifier">children</span>.<span class="ruby-identifier">remove</span>
+224:     <span class="ruby-identifier">bindings</span> = <span class="ruby-identifier">eval</span>(<span class="ruby-node">&quot;#{value}.map{ |#{args}| binding }&quot;</span>, <span class="ruby-identifier">scope</span>)
+225:     <span class="ruby-identifier">bindings</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">each_scope</span><span class="ruby-operator">|</span>
+226:       <span class="ruby-identifier">sect</span> = <span class="ruby-identifier">parse</span>(<span class="ruby-identifier">copy</span>.<span class="ruby-identifier">dup</span>.<span class="ruby-identifier">children</span>, <span class="ruby-identifier">each_scope</span>)
+227:       <span class="ruby-identifier">sect</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span>
+228:         <span class="ruby-identifier">node</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">x</span>
+229:       <span class="ruby-keyword kw">end</span>
+230:     <span class="ruby-keyword kw">end</span>
+231:     <span class="ruby-identifier">node</span>.<span class="ruby-identifier">remove_attribute</span>(<span class="ruby-value str">'each'</span>)
+232:     <span class="ruby-identifier">node</span>.<span class="ruby-identifier">remove_attribute</span>(<span class="ruby-value str">'do'</span>)
+233:     <span class="ruby-identifier">value</span>
+234:   <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="parse-if-method" class="method-detail ">
+        <a name="method-i-parse_if"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">parse_if</span><span
+            class="method-args">(node, scope)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="parse-if-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ragtag.rb, line 193</span>
+193:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parse_if</span>(<span class="ruby-identifier">node</span>, <span class="ruby-identifier">scope</span>)
+194:     <span class="ruby-identifier">value</span> = <span class="ruby-identifier">node</span>[<span class="ruby-value str">'if'</span>]
+195:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">eval</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">scope</span>)
+196:       <span class="ruby-identifier">node</span>.<span class="ruby-identifier">remove_attribute</span>(<span class="ruby-value str">'if'</span>)
+197:       <span class="ruby-identifier">parse</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">children</span>, <span class="ruby-identifier">scope</span>)
+198:     <span class="ruby-keyword kw">else</span>
+199:       <span class="ruby-identifier">node</span>.<span class="ruby-identifier">unlink</span>
+200:     <span class="ruby-keyword kw">end</span>
+201:     <span class="ruby-identifier">node</span>
+202:   <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="parse-nodeset-method" class="method-detail ">
+        <a name="method-i-parse_nodeset"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">parse_nodeset</span><span
+            class="method-args">(nodeset, scope)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="parse-nodeset-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ragtag.rb, line 152</span>
+152:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parse_nodeset</span>(<span class="ruby-identifier">nodeset</span>, <span class="ruby-identifier">scope</span>)
+153:     <span class="ruby-identifier">nodeset</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">node</span><span class="ruby-operator">|</span>
+154:       <span class="ruby-identifier">parse</span>(<span class="ruby-identifier">node</span>, <span class="ruby-identifier">scope</span>)
+155:     <span class="ruby-keyword kw">end</span>
+156:     <span class="ruby-identifier">nodeset</span>
+157:   <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="parse-omit-method" class="method-detail ">
+        <a name="method-i-parse_omit"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">parse_omit</span><span
+            class="method-args">(node, scope)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="parse-omit-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ragtag.rb, line 254</span>
+254:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parse_omit</span>(<span class="ruby-identifier">node</span>, <span class="ruby-identifier">scope</span>)
+255:     <span class="ruby-comment cmt">#parse(node.children, scope).each do |x|</span>
+256:     <span class="ruby-identifier">node</span>.<span class="ruby-identifier">children</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span>
+257:       <span class="ruby-identifier">x</span>.<span class="ruby-identifier">unlink</span>
+258:       <span class="ruby-identifier">node</span>.<span class="ruby-identifier">add_previous_sibling</span>(<span class="ruby-identifier">x</span>) 
+259:     <span class="ruby-keyword kw">end</span>
+260:     <span class="ruby-identifier">node</span>.<span class="ruby-identifier">unlink</span>
+261:   <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="parse-repeat-method" class="method-detail ">
+        <a name="method-i-parse_repeat"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">parse_repeat</span><span
+            class="method-args">(node, scope)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="parse-repeat-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ragtag.rb, line 237</span>
+237:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parse_repeat</span>(<span class="ruby-identifier">node</span>, <span class="ruby-identifier">scope</span>)
+238:     <span class="ruby-identifier">value</span> = <span class="ruby-identifier">node</span>[<span class="ruby-value str">'repeat'</span>]
+239:     <span class="ruby-identifier">args</span>  = <span class="ruby-identifier">node</span>[<span class="ruby-value str">'do'</span>] <span class="ruby-operator">||</span> <span class="ruby-value str">'x'</span>
+240:     <span class="ruby-identifier">copy</span>  = <span class="ruby-identifier">node</span>.<span class="ruby-identifier">dup</span>
+241:     <span class="ruby-identifier">copy</span>.<span class="ruby-identifier">remove_attribute</span>(<span class="ruby-value str">'repeat'</span>)
+242:     <span class="ruby-identifier">copy</span>.<span class="ruby-identifier">remove_attribute</span>(<span class="ruby-value str">'do'</span>)
+243:     <span class="ruby-identifier">bindings</span> = <span class="ruby-identifier">eval</span>(<span class="ruby-node">&quot;#{value}.map{ |#{args}| binding }&quot;</span>, <span class="ruby-identifier">scope</span>)
+244:     <span class="ruby-identifier">bindings</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">each_scope</span><span class="ruby-operator">|</span>
+245:       <span class="ruby-identifier">sect</span> = <span class="ruby-identifier">parse</span>(<span class="ruby-identifier">copy</span>.<span class="ruby-identifier">dup</span>, <span class="ruby-identifier">each_scope</span>)
+246:       <span class="ruby-identifier">node</span>.<span class="ruby-identifier">add_previous_sibling</span>(<span class="ruby-identifier">sect</span>)
+247:       <span class="ruby-comment cmt"># parse_omit(sect, scope) if sect['omit'] &amp;&amp; sect['omit'] != 'false'</span>
+248:     <span class="ruby-keyword kw">end</span>
+249:     <span class="ruby-identifier">node</span>.<span class="ruby-identifier">unlink</span>
+250:     <span class="ruby-identifier">value</span>
+251:   <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="parse-replace-method" class="method-detail ">
+        <a name="method-i-parse_replace"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">parse_replace</span><span
+            class="method-args">(node, scope)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="parse-replace-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ragtag.rb, line 167</span>
+167:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parse_replace</span>(<span class="ruby-identifier">node</span>, <span class="ruby-identifier">scope</span>)
+168:     <span class="ruby-identifier">value</span> = <span class="ruby-identifier">node</span>[<span class="ruby-value str">'replace'</span>]
+169:     <span class="ruby-identifier">node</span>.<span class="ruby-identifier">before</span>(<span class="ruby-identifier">eval</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">scope</span>).<span class="ruby-identifier">to_s</span>)
+170:     <span class="ruby-identifier">node</span>.<span class="ruby-identifier">unlink</span>
+171:   <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+    </div>
+  
+
+  </div>
+
+
+  <div id="rdoc-debugging-section-dump" class="debugging-section">
+  
+    <p>Disabled; run with --debug to generate this.</p>
+  
+  </div>
+
+</main>
+</body>
+</html>
+
