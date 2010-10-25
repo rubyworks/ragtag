@@ -1,4 +1,5 @@
 require 'nokogiri'
+require 'ragtag/meta/data'
 require 'ragtag/core_ext/opvars'
 
 # = RAGTAG - A Tag Attribute Language for Ruby

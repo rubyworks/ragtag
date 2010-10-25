@@ -8,17 +8,16 @@ Copyright (c)2005 Thomas Sawyer (Apache 2.0 License)
 
 == OVERVIEW
 
-RagTag if a Ruby-based template attribute lanaguage (TAL). Yea, it's an
-acronym. Don't blame me, blame those Zope people ;)
+RagTag is a Ruby-based template attribute lanaguage (TAL).
+Yea, it's an acronym. Don't blame me, blame those Zope people ;)
 
-RagTag is only loosely based on the Zope TAL sepcification.
-It's first priority has been to provide a good attribute based
-template system for _Ruby_.
+RagTag is only loosely based on the Zope TAL sepcification. It's first priority
+has been to provide a good attribute based template system for _Ruby_.
 
 
 == USAGE
 
-For the moment please see the WIKI[http://wiki.github.com/rubyworks/ragtag/].
+For the moment please see the Wiki[http://wiki.github.com/rubyworks/ragtag/].
 
 
 == HOW TO INSTALL
@@ -30,9 +29,9 @@ Yea you know the procedure:
 
 == DEVELOPMENT
 
-We use GitHub ge to host the project.
+We use GitHub[http://github.com/rubyworks/ragtag] to host the project.
 
-We use Syckle to manage the build.
+We use Syckle[http://github.com/proutils/syckle] to manage the build.
 
 
 == COPYRIGHT

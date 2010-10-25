@@ -1,10 +1,11 @@
 = RELEASE HISTORY
 
-
 == 0.6.0 | 2010-10-15
 
 RTALS has been renamed to RagTag!
 
+Along with the name change, RagTag no longer uses namespaces to separate
+attribute names.
 
 == 0.5.0 // 2010-04-19
 

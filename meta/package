@@ -1,7 +1,8 @@
 name    : ragtag
-date    : 2010-10-15
+date    : 2010-10-25
 version : 0.6.0
 
 requires:
   - syckle (test)
   - qed    (test)
+

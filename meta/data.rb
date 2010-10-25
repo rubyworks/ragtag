@@ -1,6 +1,4 @@
-Object.__send__(:remove_const, :VERSION) if Object.const_defined?(:VERSION)      # becuase Ruby 1.8~ gets in the way
-
-class RTALS
+class RagTag
 
   DIRECTORY = File.dirname(__FILE__)
 
@@ -24,3 +22,6 @@ class RTALS
   end
 
 end
+
+# becuase Ruby 1.8~ gets in the way
+Object.__send__(:remove_const, :VERSION) if Object.const_defined?(:VERSION)
