@@ -11,6 +11,6 @@ end
 When /The result will be/ do |text|
   eval(@code, binding)
   result = RagTag.compile(@template, binding).to_xhtml
-  text.assert.strip == result.strip
+  text.strip.assert == result.strip
 end
 

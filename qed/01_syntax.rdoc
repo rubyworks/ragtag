@@ -54,7 +54,7 @@ And given a local binding:
 
 The result will be:
 
-    <div attr="impressive" />
+    <div class="impressive"></div>
 
 
 == Conditions
@@ -96,7 +96,9 @@ The result will be:
 
     <ul>
       <li>ruby</li>
+
       <li>perl</li>
+
       <li>lua</li>
     </ul>
 
