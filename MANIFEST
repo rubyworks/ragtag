@@ -1,4 +1,5 @@
-#!mast -x Syckfile bin lib meta qed test [A-Z]*
+#!mast -x Syckfile bin eg lib meta qed test [A-Z]*
+eg/example.rb
 lib/ragtag/core_ext/opvars.rb
 lib/ragtag/meta/data.rb
 lib/ragtag/meta/package
