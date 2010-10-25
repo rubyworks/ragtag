@@ -140,7 +140,122 @@
     </div>
 
     <div id="content">
-      <h1>Require RagTag</h1>
+      <h1>Example</h1>
+<p>
+Here is a large example.
+</p>
+<p>
+Given a template:
+</p>
+<pre>
+  &lt;html&gt;
+  &lt;body&gt;
+    &lt;div attr=&quot;class: customer_class&quot;&gt;
+      &lt;h1 content=&quot;customer.name&quot;&gt;John Doe&lt;/h1&gt;
+
+      &lt;p&gt;The customer is &lt;span replace=&quot;customer.age&quot; /&gt; year old.&lt;/p&gt;
+
+      &lt;ul each=&quot;customer.tags&quot; do=&quot;tag&quot;&gt;
+        &lt;li content=&quot;tag&quot;&gt;Tag&lt;/li&gt;
+      &lt;/ul&gt;
+
+      &lt;ul each=&quot;customer.tags&quot; do=&quot;tag&quot;&gt;
+        &lt;li each=&quot;tag.split(//)&quot; do=&quot;x&quot;&gt;
+          &lt;b content=&quot;x&quot; /&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+
+      &lt;b class=&quot;notice&quot; if=&quot;customer.age &gt; 60&quot;&gt;
+        The customer is a senior citizen.
+      &lt;/b&gt;
+
+      &lt;div class=&quot;notice&quot; if=&quot;customer.age &gt; 60&quot; omit=&quot;true&quot;&gt;
+        The customer is a senior citizen.
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+  &lt;/html&gt;
+</pre>
+<p>
+And given a local binding:
+</p>
+<pre>
+  customer = OpenStruct.new
+  customer.name = &quot;John Roberts&quot;
+  customer.address = &quot;555 Hobart St&quot;
+  customer.city = &quot;Palm Bay&quot;
+  customer.state = &quot;FL&quot;
+  customer.zip = &quot;32709&quot;
+  customer.age = 65
+  customer.tags = [ 'ruby', 'javascript' ]
+
+  customer_class = customer.age &gt; 60 ? 'senior' : 'normal'
+</pre>
+<p>
+Then result will be:
+</p>
+<pre>
+  &lt;?xml version=&quot;1.0&quot;?&gt;
+  &lt;html&gt;
+  &lt;body&gt;
+    &lt;div class=&quot;senior&quot;&gt;
+      &lt;h1&gt;John Roberts&lt;/h1&gt;
+
+      &lt;p&gt;The customer is 65 year old.&lt;/p&gt;
+
+      &lt;ul&gt;
+        &lt;li&gt;ruby&lt;/li&gt;
+      
+        &lt;li&gt;javascript&lt;/li&gt;
+      &lt;/ul&gt;
+
+      &lt;ul&gt;
+        &lt;li&gt;
+          &lt;b&gt;r&lt;/b&gt;
+        
+          &lt;b&gt;u&lt;/b&gt;
+        
+          &lt;b&gt;b&lt;/b&gt;
+        
+          &lt;b&gt;y&lt;/b&gt;
+        &lt;/li&gt;
+      
+        &lt;li&gt;
+          &lt;b&gt;j&lt;/b&gt;
+        
+          &lt;b&gt;a&lt;/b&gt;
+        
+          &lt;b&gt;v&lt;/b&gt;
+        
+          &lt;b&gt;a&lt;/b&gt;
+        
+          &lt;b&gt;s&lt;/b&gt;
+        
+          &lt;b&gt;c&lt;/b&gt;
+        
+          &lt;b&gt;r&lt;/b&gt;
+        
+          &lt;b&gt;i&lt;/b&gt;
+        
+          &lt;b&gt;p&lt;/b&gt;
+        
+          &lt;b&gt;t&lt;/b&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+
+      &lt;b class=&quot;notice&quot;&gt;
+        The customer is a senior citizen.
+      &lt;/b&gt;
+
+      
+        The customer is a senior citizen.
+      
+    &lt;/div&gt;
+  &lt;/body&gt;
+  &lt;/html&gt;
+</pre>
+
+<h1>RagTag Syntax</h1>
 <p>
 To demonstrate the RagTag syntax we first need to load the library.
 </p>
