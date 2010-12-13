@@ -1,13 +1,14 @@
 ---
 title  : RagTag
-suite  : rubyworks
 summary: A Ruby Template Attribute Language
 contact: Trans <transfire@gmail.com>
 license: Apache 2.0
 created: 2005-11-26
 
-authors:
-  - Thomas Sawyer
+requires:
+  - nokogiri
+  - syckle (test)
+  - qed    (test)
 
 description:
   RagTag is a Ruby variation loosely based on Zope Page Templates and it's TAL
@@ -18,8 +19,13 @@ resources:
   home: http://rubyworks.github.com/ragtag
   code: http://github.com/rubyworks/ragtag
   mail: http://groups.google.com/rubyworks-mailinglist
-  repo: git://github.com/rubyworks/ragtag.git
 
-copyright:
-  Copyright (c) 2005 Thomas Sawyer
+repositories:
+  public: git://github.com/rubyworks/ragtag.git
+
+authors:
+  - Thomas Sawyer
+
+company  : rubyworks
+copyright: Copyright (c) 2005 Thomas Sawyer
 

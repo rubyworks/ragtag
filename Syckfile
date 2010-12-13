@@ -34,6 +34,12 @@ rdoc:
   output  : site/docs/api
   active  : true
 
+qedoc:
+  service : Custom
+  cycle   : main
+  document: |
+    system 'qedoc -t RagTag -o site/docs/qed qed/*.rdoc'
+
 syntax:
   service  : Syntax
   loadpath : ~

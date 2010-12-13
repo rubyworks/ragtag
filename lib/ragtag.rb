@@ -56,11 +56,22 @@ require 'ragtag/core_ext/opvars'
 
 class RagTag
 
-  #
-  attr :xml
+  # Access to project metadata.
+  def self.metadata
+    @metadata ||= (
+      require 'yaml'
+      YAML.load(File.new(File.dirname(__FILE__) + '/ragtag.yml'))
+    )
+  end
 
-  #
-  attr :scope
+  # Access to project metadata as constants.
+  def self.const_missing(name)
+    key = name.to_s.downcase
+    metadata[key] || super(name)
+  end
+
+  # TODO: This is only here b/c of bug in Ruby 1.8.x.
+  VERSION = metadata['version']
 
   #
   def self.compile(xml, scope=nil)
@@ -72,6 +83,12 @@ class RagTag
   #  }
   #  eval script
   #end
+
+  #
+  attr :xml
+
+  #
+  attr :scope
 
   #
   def initialize(xml)

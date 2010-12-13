@@ -1,15 +1,13 @@
-#!mast -x Syckfile bin eg lib meta qed test [A-Z]*
+#!mast -x Syckfile -x PROFILE .ruby bin eg lib man qed spec test [A-Z]*
+.ruby
 eg/example.rb
 lib/ragtag/core_ext/opvars.rb
-lib/ragtag/meta/data.rb
-lib/ragtag/meta/package
-lib/ragtag/meta/profile
 lib/ragtag.rb
-meta/data.rb
-meta/package
-meta/profile
+lib/ragtag.yml
+qed/01_syntax.rdoc
+qed/02_example.rdoc
 qed/applique/examples.rb
-qed/syntax.rdoc
 HISTORY.rdoc
 LICENSE.txt
 README.rdoc
+VERSION
