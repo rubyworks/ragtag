@@ -2,11 +2,12 @@
 .ruby
 .yardopts
 lib/ragtag/core_ext/opvars.rb
+lib/ragtag/version.rb
 lib/ragtag.rb
 lib/ragtag.yml
 spec/01_syntax.rdoc
 spec/02_example.rdoc
 spec/applique/examples.rb
 HISTORY.rdoc
-LICENSE.txt
 README.rdoc
+COPYING.rdoc

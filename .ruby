@@ -37,7 +37,7 @@ revision: 0
 created: '2005-11-26'
 summary: A Ruby Template Attribute Language
 title: RagTag
-version: 0.6.0
+version: 0.6.1
 name: ragtag
 description: ! 'RagTag is a Ruby variation loosely based on Zope Page Templates and
   it''s TAL
