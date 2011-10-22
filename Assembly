@@ -8,7 +8,8 @@ gem:
   active : true
 
 qed:
-  files: spec/*.rdoc'
+  files: spec/*.rdoc
+  priority: 2
 
 qedoc:
   title: RagTag Specs
