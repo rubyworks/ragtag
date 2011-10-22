@@ -1,47 +1,49 @@
---- 
-name: ragtag
-company: rubyworks
-repositories: 
-  public: git://github.com/rubyworks/ragtag.git
-title: RagTag
-contact: Trans <transfire@gmail.com>
-requires: 
-- group: []
-
-  name: nokogiri
-  version: 0+
-- group: 
+---
+source:
+- meta/
+authors:
+- name: Thomas Sawyer
+  email: transfire@gmail.com
+copyrights:
+- holder: RubyWorks
+  year: '2005'
+  license: BSD-2-Clause
+replacements: []
+alternatives: []
+requirements:
+- name: nokogiri
+- name: syckle
+  groups:
   - test
-  name: syckle
-  version: 0+
-- group: 
+  development: true
+- name: qed
+  groups:
   - test
-  name: qed
-  version: 0+
-resources: 
+  development: true
+dependencies: []
+conflicts: []
+repositories:
+- uri: git://github.com/rubyworks/ragtag.git
+  scm: git
+  name: upstream
+resources:
+  home: http://rubyworks.github.com/ragtag
   code: http://github.com/rubyworks/ragtag
   mail: http://groups.google.com/rubyworks-mailinglist
-  home: http://rubyworks.github.com/ragtag
-pom_verison: 1.0.0
-manifest: 
-- .ruby
-- eg/example.rb
-- lib/ragtag/core_ext/opvars.rb
-- lib/ragtag.rb
-- lib/ragtag.yml
-- qed/01_syntax.rdoc
-- qed/02_example.rdoc
-- qed/applique/examples.rb
-- HISTORY.rdoc
-- LICENSE.txt
-- README.rdoc
-- VERSION
-version: 0.6.0
-copyright: Copyright (c) 2005 Thomas Sawyer
-licenses: 
-- Apache 2.0
-description: RagTag is a Ruby variation loosely based on Zope Page Templates and it's TAL specification. It differs from ZPT in that it is specifically geared for use by Ruby.
+extra: {}
+load_path:
+- lib
+revision: 0
+created: '2005-11-26'
 summary: A Ruby Template Attribute Language
-authors: 
-- Thomas Sawyer
-created: 2005-11-26
+title: RagTag
+version: 0.6.0
+name: ragtag
+description: ! 'RagTag is a Ruby variation loosely based on Zope Page Templates and
+  it''s TAL
+
+  specification. It differs from ZPT in that it is specifically geared for use
+
+  by Ruby.'
+organization: rubyworks
+date: '2011-10-22'

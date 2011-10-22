@@ -1,0 +1,32 @@
+---
+email:
+  mailto:
+    - ruby-talk@ruby-lang.org
+    - rubyworks-mailinglist@googlegroups.com
+
+gem:
+  active : true
+
+qed:
+  files: spec/*.rdoc'
+
+qedoc:
+  title: RagTag Specs
+  files: spec/*.rdoc'
+  output: SPEC.rdoc
+
+syntax:
+  files: lib/
+
+dnote:
+  labels: ~
+  output: lob/NOTES.rdoc
+
+#locat:
+#  active: false
+
+vclog:
+  output:
+    - log/Changes.rdoc
+    - log/History.rdoc
+

@@ -1,6 +1,6 @@
+.reap/digest
+.yaropts
 doc
-ri
 log
 pkg
 tmp
-site/docs
