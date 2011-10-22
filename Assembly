@@ -21,7 +21,7 @@ syntax:
 
 dnote:
   labels: ~
-  output: lob/NOTES.rdoc
+  output: log/NOTES.rdoc
 
 #locat:
 #  active: false
