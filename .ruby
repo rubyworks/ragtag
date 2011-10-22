@@ -12,9 +12,9 @@ replacements: []
 alternatives: []
 requirements:
 - name: nokogiri
-- name: syckle
+- name: detroit
   groups:
-  - test
+  - build
   development: true
 - name: qed
   groups:
