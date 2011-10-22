@@ -9,5 +9,6 @@ spec/01_syntax.rdoc
 spec/02_example.rdoc
 spec/applique/examples.rb
 HISTORY.rdoc
+SPEC.rdoc
 README.rdoc
 COPYING.rdoc
