@@ -5,32 +5,33 @@ email:
     - rubyworks-mailinglist@googlegroups.com
 
 github:
-  active: true
+  gh_page: web
 
 gem:
-  active : true
+  active: true
 
 qed:
-  files: spec/*.rdoc
+  files: demo/*.rdoc
   priority: 2
 
 qedoc:
+  files: demo/*.rdoc'
   title: RagTag Specs
-  files: spec/*.rdoc'
-  output: SPEC.rdoc
+  output: DEMO.rdoc
 
 syntax:
   files: lib/
 
 dnote:
+  title: Developer's Notes
   labels: ~
-  output: log/NOTES.rdoc
+  output: log/notes.html
 
 #locat:
 #  active: false
 
 vclog:
   output:
-    - log/Changes.rdoc
-    - log/History.rdoc
+    - log/changes.html
+    - log/history.html
 

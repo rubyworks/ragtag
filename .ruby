@@ -1,6 +1,6 @@
 ---
 source:
-- meta/
+- var
 authors:
 - name: Thomas Sawyer
   email: transfire@gmail.com
@@ -46,4 +46,4 @@ description: ! 'RagTag is a Ruby variation loosely based on Zope Page Templates 
 
   by Ruby.'
 organization: rubyworks
-date: '2011-10-22'
+date: '2011-11-11'
