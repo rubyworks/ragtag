@@ -1,6 +1,15 @@
-= RELEASE HISTORY
+# RELEASE HISTORY
 
-== 0.6.1 | 2011-10-22
+## 0.7.0
+
+This release ditches support for Ruby versions older than 2.0.
+
+Changes:
+
+* Remove support for Ruby older than 2.0.
+
+
+## 0.6.1 | 2011-10-22
 
 This is just an administrative release to update the build
 configuration. Functionality of library hasn't changed. 
@@ -13,7 +22,7 @@ Changes:
 * Modernize build configuration.
 
 
-== 0.6.0 | 2010-10-15
+## 0.6.0 | 2010-10-15
 
 RTALS has been renamed to RagTag!
 
@@ -26,7 +35,7 @@ Changes:
 * No longer use XML namespace.
 
 
-== 0.5.0 // 2010-04-19
+## 0.5.0 | 2010-04-19
 
 This is the first public release of RTALS. The library is
 finally at a point where I think it is generally usable.

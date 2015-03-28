@@ -1,3 +1,0 @@
-RagTag is a Ruby variation loosely based on Zope Page Templates and it's TAL
-specification. It differs from ZPT in that it is specifically geared for use
-by Ruby.

@@ -1,14 +1,11 @@
-#!mast .ruby .yardopts bin lib man qed spec test [A-Z]*.*
-.ruby
+#!mast .index .yardopts bin lib man qed spec test *.md *.txt
+.index
 .yardopts
 lib/ragtag/core_ext/opvars.rb
 lib/ragtag/version.rb
 lib/ragtag.rb
 lib/ragtag.yml
-spec/01_syntax.rdoc
-spec/02_example.rdoc
-spec/applique/examples.rb
-HISTORY.rdoc
-SPEC.rdoc
-README.rdoc
-COPYING.rdoc
+README.md
+HISTORY.md
+DEMO.md
+LICENSE.txt

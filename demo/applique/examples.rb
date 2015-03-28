@@ -1,3 +1,4 @@
+require 'ae'
 require 'ostruct'
 
 When /Given a template/ do |text|

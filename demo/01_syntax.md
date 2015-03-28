@@ -1,11 +1,11 @@
-= RagTag Syntax
+# RagTag Syntax
 
 To demonstrate the RagTag syntax we first need to load the library.
 
     require 'ragtag'
 
 
-== Content Rendering
+## Content Rendering
 
 Tag content can be rendered using the `content` attribute.
 
@@ -22,7 +22,7 @@ Then result will be:
     <h1>Bill Hickcock</h1>
 
 
-== Replacement
+## Replacement
 
 A tag can be fully replaced by a rendering using the `replace`
 attribute.
@@ -40,7 +40,7 @@ The result will be:
     <p>The customer is 40 years old.</p>
 
 
-== Atrtibute Rendering
+## Atrtibute Rendering
 
 To render variable attributes use the `attr` attribute.
 
@@ -57,7 +57,7 @@ The result will be:
     <div class="impressive"></div>
 
 
-== Conditions
+## Conditions
 
 Conditional sections can be created using the `if` attribute.
 
@@ -78,7 +78,7 @@ The result will be:
     </b>
 
 
-== Iteration
+## Iteration
 
 Iterations can be acheived via the `each` attribute.
 
