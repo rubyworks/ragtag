@@ -7,8 +7,9 @@
 RagTag is a Ruby-based template attribute lanaguage (TAL).
 Yea, it's an acronym. Don't blame me, blame those Zope people! :wink:
 
-RagTag is only loosely based on the Zope TAL sepcification. It's first priority
-has been to provide a good attribute based template system for **Ruby**.
+RagTag is only loosely based on the Zope TAL sepcification. Its first priority
+is to *Ruby*, providing a good attribute based template system specially catered
+to it.
 
 
 ## HOW TO USE
