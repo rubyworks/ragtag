@@ -15,7 +15,7 @@ When /The result will be/ do |text|
   result = RagTag.compile(@template, b).to_xhtml
   # IMPORTANT! We remove the new lines only b/c JRuby inserts extras.
   #            Don't know why, but there you are.
-  text   = text.strip..delete("\n")
+  text   = text.strip.delete("\n")
   result = result.strip.delete("\n")
   text.assert == result
 end
