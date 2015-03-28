@@ -1,49 +1,57 @@
 ---
-source:
-- var
+revision: 2013
+type: ruby
+sources:
+- INDEX.yml
 authors:
-- name: Thomas Sawyer
+- name: trans
   email: transfire@gmail.com
+organizations:
+- name: Rubyworks
+requirements:
+- name: nokogiri
+- groups:
+  - build
+  development: true
+  name: detroit
+- groups:
+  - test
+  development: true
+  name: qed
+- groups:
+  - test
+  development: true
+  name: ae
+conflicts: []
+alternatives: []
+resources:
+- type: home
+  uri: http://rubyworks.github.com/ragtag
+  label: Homepage
+- type: code
+  uri: http://github.com/rubyworks/ragtag
+  label: Source Code
+- type: bugs
+  uri: http://github.com/rubyworks/ragtag/issues
+  label: Issue Tracker
+repositories:
+- name: upstream
+  scm: git
+  uri: git://github.com/rubyworks/ragtag.git
+categories: []
 copyrights:
 - holder: RubyWorks
   year: '2005'
   license: BSD-2-Clause
-replacements: []
-alternatives: []
-requirements:
-- name: nokogiri
-- name: detroit
-  groups:
-  - build
-  development: true
-- name: qed
-  groups:
-  - test
-  development: true
-dependencies: []
-conflicts: []
-repositories:
-- uri: git://github.com/rubyworks/ragtag.git
-  scm: git
-  name: upstream
-resources:
-  home: http://rubyworks.github.com/ragtag
-  code: http://github.com/rubyworks/ragtag
-  mail: http://groups.google.com/rubyworks-mailinglist
-extra: {}
-load_path:
-- lib
-revision: 0
-created: '2005-11-26'
-summary: A Ruby Template Attribute Language
-title: RagTag
-version: 0.6.1
+customs: []
+paths:
+  lib:
+  - lib
 name: ragtag
-description: ! 'RagTag is a Ruby variation loosely based on Zope Page Templates and
-  it''s TAL
-
-  specification. It differs from ZPT in that it is specifically geared for use
-
-  by Ruby.'
-organization: rubyworks
-date: '2011-11-11'
+title: RagTag
+version: 0.7.0
+summary: Ruby Tag Attribute Language
+description: RagTag is a Ruby variation on Zope Page Templates and it's TAL specification.
+  It primarily differs from ZPT in that it is specifically geared for use with Ruby.
+created: '2005-11-26'
+date: '2015-03-28'
