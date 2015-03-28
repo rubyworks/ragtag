@@ -5,15 +5,15 @@
 [![Issues](https://img.shields.io/github/issues-raw/rubyworks/ragtag.svg)](https://github.com/rubyworks/ragtag/issues)
 
 RagTag is a Ruby-based template attribute lanaguage (TAL).
-Yea, it's an acronym. Don't blame me, blame those Zope people ;)
+Yea, it's an acronym. Don't blame me, blame those Zope people! :wink:
 
 RagTag is only loosely based on the Zope TAL sepcification. It's first priority
-has been to provide a good attribute based template system for _Ruby_.
+has been to provide a good attribute based template system for **Ruby**.
 
 
 ## HOW TO USE
 
-For the moment please see the Wiki[http://wiki.github.com/rubyworks/ragtag/].
+For the moment please see the [Wiki](http://wiki.github.com/rubyworks/ragtag/).
 
 
 ## HOW TO INSTALL
@@ -29,16 +29,14 @@ Using Bundler add the following to you gem file.
 
 ## DEVELOPMENT
 
-We use GitHub[https://github.com/rubyworks/ragtag] to host the project.
+We use [GitHub](https://github.com/rubyworks/ragtag) to host the project.
 
-We use Detroit[https://detroit.github.io] to manage the build.
+We use [Detroit](https://detroit.github.io) to manage the build.
 
 
 ## COPYRIGHT
 
-(BSD-2-Clause License)
-
-Copyright (c) 2005 Rubyworks
+Copyright (c) 2005 Rubyworks (BSD-2-Clause License)
 
 RagTag is distributable in accordance to the terms of the *FreeBSD* license.
 
